@@ -1,0 +1,699 @@
+---
+title: "Online Supplement to \"Small-scale multilingualism through the prism of lexical borrowing\""
+bibliography: bibliography.bib
+nocite: '@*'
+author: Ilia Chechuro, Michael Daniel, Samira Verhees
+output:
+  html_document:
+    df_print: paged
+---
+
+
+
+This page consists of two blocks. First, we deal with real data only and calculate the actual numbers of sharings between our East-Caucasian wordlists and two Azerbaijani varieties (A-Azerbaijani and D-Azerbaijani). Then, we apply a permutation test that is described in a corresponding section and create a new sample of wordlists based on our data but with pan-Daghestanian probabilities of attesting particular lexemes in the lists and test our real data against this gainst this sample.
+
+<!--In this part we read the source data and count real values for Azerbaijani influence.
+
+# Loading the necessary packages -->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+library(plyr)
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+library(ggrepel)
+library(reshape2)
+library(dplyr)
+library(ggpubr)
+library(factoextra)
+library(svglite)
+
+
+'%nin%' <- Negate('%in%')
+'%+=%' <- function(e1,e2) eval.parent(substitute(e1 <- e1 + e2))
+```
+
+<!-- ### 0.2. Functions
+
+The function *preproc_data* reads the data file. -->
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+preproc_data <- function(data_file) {
+  data <- as.data.frame(read_tsv(data_file))
+  data <- data[which(data$Stem != "NA"),]
+  data <- distinct(data)
+  return(data)
+}
+```
+
+<!-- The function *fake_counts* counts the percentages of loans in permuted dataset. -->
+
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+fake_counts <- function(fake_loans, real_loans, source) {
+  fake_loans %>% group_by(District, Code, Iter, Code_Iter, Language) %>% distinct(Code_Iter, `Concept nr.`) %>% dplyr::count() -> fake_counts
+  fake_counts <- right_join(fake_counts, speakers, by = c("Code", "Iter", "Code_Iter"))
+  colnames(fake_counts)[6] <- paste(source, "_Loans", sep = "")
+  fake_counts <- left_join(fake_counts, counts_real[names(counts_real) %in% c("Code", paste(source, "_Loans", sep = ""))], by = "Code")
+  colnames(fake_counts)[c(length(fake_counts), length(fake_counts) - 1)] <- c("Loans_Real", "Loans_Fake")
+  fake_counts$Loans_Fake[is.na(fake_counts$Loans_Fake)] <- 0
+  fake_counts <- left_join(fake_counts, List_sizes[,c(4,5)], by = "Code")
+  fake_counts$Real_Percentage <- fake_counts$Loans_Real/fake_counts$List_Size
+  fake_counts$Fake_Percentage <- fake_counts$Loans_Fake/fake_counts$List_Size
+  return(fake_counts)
+} 
+```
+
+<!--The function *fake_means* calculates the means for permuted data.-->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+fake_means <- function(fake_counts) {
+  fake_counts %>% group_by(Iter, District) %>% mutate(Fake_Mean = mean(Fake_Percentage)) -> fake_counts
+  fake_counts %>% group_by(Iter, District) %>% mutate(Real_Mean = mean(Real_Percentage)) -> fake_counts
+  fake_counts$Delta <- fake_counts$Real_Mean - fake_counts$Fake_Mean
+  fake_means <- fake_counts[!duplicated(fake_counts[names(fake_counts) %in% c("Iter", "District")]),]
+  return(fake_means)
+}
+```
+
+
+<!-- The function *makeplot* plots the results of the permutation test.-->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+makeplot <- function(data, source) {
+  p <- ggplot(data, aes(x = Delta)) + 
+  geom_density(adjust = 5)+
+  geom_histogram(aes(y = ..density..), alpha = 0.2)+
+  geom_vline(xintercept = 0)+
+  ggtitle(paste("Borrowings from", source))+
+  theme_bw()+
+  labs(x = "", y = "")+
+  theme(text = element_text(size=15))+
+  theme(plot.title = element_text(size = 20, face = "bold"))+
+  facet_wrap(~ District, 
+             labeller = labeller(District = D_percentages))
+  return(p)
+}
+```
+
+# 1. Real Data
+
+<!--This chunk reads the data. -->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+meta <- as.data.frame(read_tsv("meta_anon.tsv"))
+words <- as.data.frame(preproc_data("words_IJB_submission.tsv"))
+words_meta <- left_join(meta, words, by = "Code")
+words_meta$Set <- paste(words_meta$`Concept nr.`, words_meta$Stem, sep = " - ")
+```
+
+<!--This chunk extracts the lists of donor languages.-->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+to_remove <- words_meta[which(words_meta$Code %in% c("E_Russian", "E_Arabic", "E_Persian")),]
+
+Std_Azeri <- distinct(words_meta[words_meta$Code %in% c("E_Azerbaijani") & words_meta$Set %nin% to_remove$Set,])
+Total_Azeri <- distinct(words_meta[words_meta$Language %in% c("Azerbaijani") & words_meta$Set %nin% to_remove$Set,])
+
+A_Azeri <- distinct(words_meta[words_meta$Village %in% c("Qax", "Ilisu") & words_meta$Language %in% c("Azerbaijani") & words_meta$Set %nin%  to_remove$Set & words_meta$Set %nin% Std_Azeri$Set,])
+D_Azeri <- distinct(words_meta[words_meta$Village %in% c("Darvag", "Yersi", "Ersi") & words_meta$Language %in% c("Azerbaijani") & words_meta$Set %nin%  to_remove$Set & words_meta$Set %nin% Std_Azeri$Set,])
+A_Azeri_clean <- A_Azeri[A_Azeri$Set %nin% D_Azeri$Set,]
+D_Azeri_clean <- D_Azeri[D_Azeri$Set %nin% A_Azeri$Set,]
+Non_Std_Azeri <- rbind(A_Azeri_clean, D_Azeri_clean)
+
+A_Azeri_with_Std <- distinct(words_meta[words_meta$Village %in% c("Qax", "Ilisu") & words_meta$Language %in% c("Azerbaijani") & words_meta$Set %nin% to_remove$Set,])
+D_Azeri_with_Std <- distinct(words_meta[words_meta$Village %in% c("Darvag", "Yersi", "Ersi") & words_meta$Language %in% c("Azerbaijani") & words_meta$Set %nin% to_remove$Set,])
+A_Azeri_clean_Std <- A_Azeri_with_Std[A_Azeri_with_Std$Set %nin% D_Azeri_with_Std$Set,]
+D_Azeri_clean_Std <- D_Azeri_with_Std[D_Azeri_with_Std$Set %nin% A_Azeri_with_Std$Set,]
+```
+
+<!--This chunk subsets the words that are present in the donor languages.-->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+A_Azeri_loans <- as.data.frame(words_meta[words_meta$Set %in% A_Azeri_clean$Set,])
+D_Azeri_loans <- as.data.frame(words_meta[words_meta$Set %in% D_Azeri_clean$Set,])
+Non_Std_Azeri_loans <- as.data.frame(words_meta[words_meta$Set %in% Non_Std_Azeri$Set,])
+Total_Azeri_loans <- as.data.frame(words_meta[words_meta$Set %in% Total_Azeri$Set,])
+
+A_Azeri_Std_loans <- as.data.frame(words_meta[words_meta$Set %in% A_Azeri_clean_Std$Set,])
+D_Azeri_Std_loans <- as.data.frame(words_meta[words_meta$Set %in% D_Azeri_clean_Std$Set,])
+
+```
+
+<!--This chunk counts loanwords of each type. -->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+words_meta %>% group_by(Language, District, Village, Code) %>% distinct(Code, `Concept nr.`) %>% dplyr::count() -> List_sizes
+colnames(List_sizes)[5] <- "List_Size"
+
+A_Azeri_loans <- A_Azeri_loans[which(A_Azeri_loans$Set %nin% to_remove$Set),]
+A_Azeri_loans %>% group_by(Language, District, Village, Code) %>% distinct(Code, `Concept nr.`)%>% dplyr::count() -> A_Azeri_loans_counts
+colnames(A_Azeri_loans_counts)[5] <- "A_Azeri_Loans"
+
+D_Azeri_loans <- D_Azeri_loans[which(D_Azeri_loans$Set %nin% to_remove$Set),]
+D_Azeri_loans %>% group_by(Language, District, Village, Code) %>% distinct(Code, `Concept nr.`)%>% dplyr::count() -> D_Azeri_loans_counts
+colnames(D_Azeri_loans_counts)[5] <- "D_Azeri_Loans"
+
+Non_Std_Azeri_loans <- Non_Std_Azeri_loans[which(Non_Std_Azeri_loans$Set %nin% to_remove$Set),]
+Non_Std_Azeri_loans %>% group_by(Language, District, Village, Code) %>% distinct(Code, `Concept nr.`)%>% dplyr::count() -> Non_Std_Azeri_loans_counts
+colnames(Non_Std_Azeri_loans_counts)[5] <- "Non_Std_Azeri_Loans"
+
+Total_Azeri_loans <- Total_Azeri_loans[which(Total_Azeri_loans$Set %nin% to_remove$Set),]
+Total_Azeri_loans %>% group_by(Language, District, Village, Code) %>% distinct(Code, `Concept nr.`)%>% dplyr::count() -> Total_Azeri_loans_counts
+colnames(Total_Azeri_loans_counts)[5] <- "Total_Azeri_Loans"
+
+A_Azeri_Std_loans <- A_Azeri_Std_loans[which(A_Azeri_Std_loans$Set %nin% to_remove$Set),]
+A_Azeri_Std_loans %>% group_by(Language, District, Village, Code) %>% distinct(Code, `Concept nr.`)%>% dplyr::count() -> A_Azeri_Std_loans_counts
+colnames(A_Azeri_Std_loans_counts)[5] <- "A_Azeri_Std_Loans"
+
+D_Azeri_Std_loans <- D_Azeri_Std_loans[which(D_Azeri_Std_loans$Set %nin% to_remove$Set),]
+D_Azeri_Std_loans %>% group_by(Language, District, Village, Code) %>% distinct(Code, `Concept nr.`)%>% dplyr::count() -> D_Azeri_Std_loans_counts
+colnames(D_Azeri_Std_loans_counts)[5] <- "D_Azeri_Std_Loans"
+```
+
+<!--This chunk creates the dataset for plotting and counts loan proportions.-->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+counts_real <- full_join(
+  Total_Azeri_loans_counts,
+    D_Azeri_loans_counts[,c(4,5)], by = "Code")
+counts_real <- full_join(
+    counts_real,
+    A_Azeri_loans_counts[,c(4,5)], by = "Code")
+counts_real <- full_join(
+    counts_real,
+    A_Azeri_Std_loans_counts[,c(4,5)], by = "Code")
+counts_real <- full_join(
+    counts_real,
+    D_Azeri_Std_loans_counts[,c(4,5)], by = "Code")
+counts_real <- full_join(
+    counts_real,
+    List_sizes[,c(4,5)], by = "Code")
+
+counts_real[is.na(counts_real)] <- 0
+counts_real$A_Proportion <- counts_real$A_Azeri_Loans / counts_real$List_Size
+counts_real$D_Proportion <- counts_real$D_Azeri_Loans / counts_real$List_Size
+counts_real$Total_Azeri_Proportion <- counts_real$Total_Azeri_Loans / counts_real$List_Size
+counts_real$A_Std_Proportion <- counts_real$A_Azeri_Std_Loans / counts_real$List_Size
+counts_real$D_Std_Proportion <- counts_real$D_Azeri_Std_Loans / counts_real$List_Size
+counts_real$A_Prop_Turk <- counts_real$A_Std_Proportion / counts_real$Total_Azeri_Proportion
+counts_real$D_Prop_Turk <- counts_real$D_Std_Proportion / counts_real$Total_Azeri_Proportion
+```
+
+## Boxplots (Fig. 2 in the paper)
+
+<!--Also correlation test from Part 3.3.-->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+d <- counts_real[which(counts_real$District %in% c("Rutul", "Akhty", "Tabasaran", "Khiv") & counts_real$Language %in% c("Rutul", "Lezgian", "Tabasaran", "Tsakhur") ),]
+
+d$District <- paste(d$Language, d$District, sep = ", ")
+d$Language <- factor(d$Language, levels = c("Tabasaran", "Lezgian", "Rutul", "Tsakhur"))
+
+multling <- read_tsv("Multilingualism.tsv")
+d_m <- left_join(d, multling[,c(1,6)], by = "Village")
+d_m <- d_m[which(d_m$Village %in% multling$Village),]
+#cor.test(d_m$Total_Azeri_Proportion, d_m$Turkic)
+
+
+p <- ggboxplot(d, x = "Language", y = "Total_Azeri_Proportion",
+                color = "black", palette = "jco",
+                add = "median", label = "Village", repel = TRUE, font.label = list(size = 14)) + 
+  theme(axis.title = element_text(size = 30, face = "bold"), axis.text.x = element_text(size=20, face = "bold"), axis.text.y = element_text(size=14))+
+  labs(title = "", x = "Language", y = "Proportion of Azerbaijani Loans")
+p
+#ggsave(file="Fig2.svg", plot=p, width=20, height=10)
+#ggsave(file="Fig2_smaller.svg", plot=p, width=14, height=7)
+```
+
+
+
+Each point represents an elicitation and shows the name of the village where this elicitation was obtained. On the X-axis, elicitations are grouped by the native language of the consultant, together with a boxplot and the median for each group. By and large, there is a correlation of the amount of lexical borrowing with the language, with the Tsakhurs showing highest and Tabasaran showing lowest figures, and the Lezgians and Rutuls sitting in between. Within a language, the amount of loanwords seems to depend on the village. Thus, among the Lezgians, Gdym and Fiy speakers are located far higher than the median, and the Rutuls of Kiche are far lower. This correlates with the bilingualism rates shown in Table 1 above, whereby the villagers of Gdym and Fiy, living on the border with Azerbaijan, show an almost universal knowledge of Azerbaijani, while the knowledge of Azerbaijani among the villagers of Kiche was visibly lower than in other Rutul villages.
+
+Note, however, that the level of bilingualism and mere distance to the Azerbaijani border are probably not reliable predictors per se. In Arkhit, the number of loans is similar to Khlyut, even though Arkhit is located in the Khiv district, the only one in our sample that does not immediately border an Azerbaijani-speaking area, while the Rutul district, where Khlyut is located, borders Azerbaijan. Similarly, in Dyubek, with vicinal bilingualism in Azerbaijani, the amount of borrowings is just as low as in the Tabasaran villages, where the knowledge of Azerbaijani was much lower, e.g. in Khiv and Laka (see Table 2). Daniel et al. (submitted) argue that the language is a much more likely lexical donor if it is used as a lingua franca. In the villages in our survey, Azerbaijani was indeed used as a lingua franca in the West (e.g. between Tsakhurs and Rutuls) but not in the East (e.g. between Tabasarans and Lezgians).
+
+## Clusterings 
+
+In this part, we explore the different definitions of what a quantitative proxy to the intensity of contact may be and whether it has any effect on the results. Since all clusterings provide essentially the same results, only the first one is presented in the paper.
+
+### Clustering by Proportion of A / D loans out of the total list size. (Fig. 3 in the paper).
+
+In the plot below, we use the percentage of A- / D- loans fron the total list size, i.e. the number of successfuly collected lexical items for a given speaker.  
+
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=5}
+d <- counts_real[which(counts_real$District %in% c("Rutul", "Akhty", "Tabasaran", "Khiv", "Qax") & counts_real$Language %in% c("Rutul", "Lezgian", "Tabasaran", "Tsakhur") ),]
+
+p_clust_1 <- factoextra::fviz_nbclust(d[,c(which(names(d) %in% c("A_Std_Proportion", "D_Std_Proportion")))], kmeans, method = "wss") +
+    geom_vline(xintercept = 2, linetype = 2, color = "steelblue")+
+  labs(subtitle = "Elbow Method")
+p_clust_2 <- factoextra::fviz_nbclust(d[,c(which(names(d) %in% c("A_Std_Proportion", "D_Std_Proportion")))], kmeans, method = "silhouette") +
+   # geom_vline(xintercept = 4, linetype = 2)+
+  labs(subtitle = "Silhouette Method")
+p_clust_3 <- factoextra::fviz_nbclust(d[,c(which(names(d) %in% c("A_Std_Proportion", "D_Std_Proportion")))], kmeans, method = "gap_stat") +
+   # geom_vline(xintercept = 4, linetype = 2)+
+  labs(subtitle = "Gap Statistic")
+
+df <- d[,c(which(names(d) %in% c("A_Std_Proportion", "D_Std_Proportion")))]
+fit <- kmeans(df, 2)
+
+d$Cluster <- fit$cluster
+d$A_Percentage <- d$A_Std_Proportion*100
+d$D_Percentage <- d$D_Std_Proportion*100
+
+p_clust_lang_Fig3 <- fviz_cluster(fit, data = d,
+             choose.vars = c("A_Percentage", "D_Percentage"),
+             stand = FALSE,
+             geom = "blank",
+             shape = NULL,
+             ellipse.type = "convex",
+             palette = "jco",
+             ggtheme = theme_minimal()) + 
+  geom_text_repel(aes(label = d$Village, col = d$Language), size = 6)+
+  geom_point(aes(col = d$Language))+
+  labs(title = "", x = "Percentage of A-Azerbaijani Loanwords", y = "Percentage of D-Azerbaijani Loanwords")+
+  scale_color_manual(values = c("#0073C299", "#EFC00099", "#BC3C29FF", "#E18727FF", "#0072B5FF","#20854EFF"), name = "Cluster / Language / Elicitation")+
+  ggtitle("")+
+  theme(text = element_text(size=15))+
+  theme(plot.title = element_text(size = 30, face = "bold"))
+ggarrange(p_clust_1, p_clust_2, p_clust_3, nrow = 1, ncol = 3)
+```
+
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+p_clust_lang_Fig3
+#ggsave(file="Fig3.svg", plot=p_clust_lang_Fig3, width=20, height=10)
+#ggsave(file="Fig3_smaller.svg", plot=p_clust_lang_Fig3, width=14, height=7)
+
+```
+
+### Clustering by Proportion of A / D loans out of total Azeri loans
+
+In the following plot, the number of A- / D- loanwords is divided by the total number of Turkic loans in a speaker. This way of counting may adjust the resulting numbers to the intensity of Turkic influence in each speaker as well as to the differences between speakers. Note that the results are essentially the same, only few dots are misattributed, so we stick to the first clustering.
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=5}
+d <- counts_real[which(counts_real$District %in% c("Rutul", "Akhty", "Tabasaran", "Khiv", "Qax") & counts_real$Language %in% c("Rutul", "Lezgian", "Tabasaran", "Tsakhur") ),]
+d$A_Prop_Turk <- d$A_Std_Proportion/d$Total_Azeri_Proportion
+d$D_Prop_Turk <- d$D_Std_Proportion/d$Total_Azeri_Proportion
+
+
+p_clust_1_alternative1 <- factoextra::fviz_nbclust(d[,c(which(names(d) %in% c("A_Prop_Turk", "D_Prop_Turk")))], kmeans, method = "wss") +
+    geom_vline(xintercept = 2, linetype = 2, color = "steelblue")+
+  labs(subtitle = "Elbow Method")
+p_clust_2_alternative1 <- factoextra::fviz_nbclust(d[,c(which(names(d) %in% c("A_Prop_Turk", "D_Prop_Turk")))], kmeans, method = "silhouette") +
+   # geom_vline(xintercept = 4, linetype = 2)+
+  labs(subtitle = "Silhouette Method")
+p_clust_3_alternative1 <- factoextra::fviz_nbclust(d[,c(which(names(d) %in% c("A_Prop_Turk", "D_Prop_Turk")))], kmeans, method = "gap_stat") +
+   # geom_vline(xintercept = 4, linetype = 2)+
+  labs(subtitle = "Gap Statistic")
+
+df <- d[,c(which(names(d) %in% c("A_Prop_Turk", "D_Prop_Turk")))]
+fit <- kmeans(df, 2)
+
+d$Cluster <- fit$cluster
+d$A_Percentage <- d$A_Prop_Turk*100
+d$D_Percentage <- d$D_Prop_Turk*100
+
+p_clust_lang_Fig3_alternative1 <- fviz_cluster(fit, data = d,
+             choose.vars = c("A_Percentage", "D_Percentage"),
+             stand = FALSE,
+             geom = "blank",
+             shape = NULL,
+             ellipse.type = "convex",
+             palette = "jco",
+             ggtheme = theme_minimal()) + 
+  geom_text_repel(aes(label = d$Village, col = d$Language), size = 6)+
+  geom_point(aes(col = d$Language))+
+  labs(title = "", x = "Percentage of A-Azerbaijani Loanwords (out of Total Azerbaijani Loans)", y = "Percentage of D-Azerbaijani Loanwords (out of Total Azerbaijani Loans)")+
+  scale_color_manual(values = c("#0073C299", "#EFC00099", "#BC3C29FF", "#E18727FF", "#0072B5FF","#20854EFF"), name = "Cluster / Language / Elicitation")+
+  ggtitle("")+
+  theme(text = element_text(size=15))+
+  theme(plot.title = element_text(size = 30, face = "bold"))
+ggarrange(p_clust_1_alternative1, p_clust_2_alternative1, p_clust_3_alternative1, nrow = 1, ncol = 3)
+```
+
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+p_clust_lang_Fig3_alternative1
+```
+
+
+### The same clusterization, Std Azeri words REMOVED
+
+The cluster below only uses the A- / D- loanwords that are absent in Standard Azerbaijani, so the counts are considerably lower mainly due to the fact that (a) Standard Azerbaijani is pan-dialectal and (b) Azerbaijani dialects are fairly similar lexically. The clustering works even better than the previous two (not a single mis-clusterized data point), but the proportions are extremely low, so we prefer to use the first clustering in the paper.
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=5}
+d <- counts_real[which(counts_real$District %in% c("Rutul", "Akhty", "Tabasaran", "Khiv", "Qax") & counts_real$Language %in% c("Rutul", "Lezgian", "Tabasaran", "Tsakhur") ),]
+
+p_clust_1_alternative2 <- factoextra::fviz_nbclust(d[,c(which(names(d) %in% c("A_Proportion", "D_Proportion")))], kmeans, method = "wss") +
+    geom_vline(xintercept = 2, linetype = 2, color = "steelblue")+
+  geom_vline(xintercept = 3, linetype = 2, color = "steelblue")+
+  labs(subtitle = "Elbow Method")
+p_clust_2_alternative2 <- factoextra::fviz_nbclust(d[,c(which(names(d) %in% c("A_Proportion", "D_Proportion")))], kmeans, method = "silhouette") +
+   # geom_vline(xintercept = 4, linetype = 2)+
+  labs(subtitle = "Silhouette Method")
+p_clust_3_alternative2 <- factoextra::fviz_nbclust(d[,c(which(names(d) %in% c("A_Proportion", "D_Proportion")))], kmeans, method = "gap_stat") +
+   # geom_vline(xintercept = 4, linetype = 2)+
+  labs(subtitle = "Gap Statistic")
+
+df <- d[,c(which(names(d) %in% c("A_Proportion", "D_Proportion")))]
+fit <- kmeans(df, 2)
+#fit <- kmeans(df, 3)
+#fit <- dbscan::dbscan(df, minPts = 5, eps = 0.1)
+
+#db <- fpc::dbscan(df, eps = 0.01, MinPts = 3)
+# Plot DBSCAN results
+#plot(db, df, main = "DBSCAN", frame = FALSE)
+
+d$Cluster <- fit$cluster
+d$A_Percentage <- d$A_Proportion*100
+d$D_Percentage <- d$D_Proportion*100
+
+p_clust_lang_Fig3_alternative2 <- fviz_cluster(fit, data = d,
+             choose.vars = c("A_Percentage", "D_Percentage"),
+             stand = FALSE,
+             geom = "blank",
+             shape = NULL,
+             ellipse.type = "convex",
+             palette = "jco",
+             ggtheme = theme_minimal()) + 
+  geom_text_repel(aes(label = d$Village, col = d$Language), size = 6)+
+  geom_point(aes(col = d$Language))+
+  labs(title = "", x = "Percentage of A-Azerbaijani Loanwords", y = "Percentage of D-Azerbaijani Loanwords")+
+  scale_color_manual(values = c("#0073C299", "#EFC00099", "#BC3C29FF", "#E18727FF", "#0072B5FF","#20854EFF"), name = "Cluster / Language / Elicitation")+
+  ggtitle("")+
+  theme(text = element_text(size=15))+
+  theme(plot.title = element_text(size = 30, face = "bold"))
+ggarrange(p_clust_1_alternative2, p_clust_2_alternative2, p_clust_3_alternative2, nrow = 1, ncol = 3)
+
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+p_clust_lang_Fig3_alternative2
+```
+
+<!--Now we have real counts and can proceed to the simulations.-->
+
+# 2. Permutation Tests
+
+<!--The chunk below pulls speaker IDs from the original sample in sets of 29 from the source sample. We select equal number of speakers per region to ensure that there is no geographical bias in the sample caused by the size of the sample from each region.-->
+
+The plot below presents three separately run permutation tests. 
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+iterations <- 1000
+relevant_entries <- words_meta[words_meta$District %in% c("Rutul", "Akhty", "Tabasaran", "Khiv") & words_meta$Language != "Azerbaijani",]
+relevant_entries$District[relevant_entries$District %in% c("Rutul", "Akhty")] <- "West"
+relevant_entries$District[relevant_entries$District %in% c("Tabasaran", "Khiv")] <- "East"
+relevant_entries <- relevant_entries[!duplicated(relevant_entries),]
+
+
+speakers <-  replicate(iterations, (relevant_entries[!duplicated(relevant_entries$Code),] %>% group_by(District) %>% sample_n(29)), simplify = "matrix")
+speakers <- unlist(speakers[4,])
+speakers <- as.data.frame(speakers)
+
+Iter <- c()
+for (i in c(1:iterations)){
+  Iter <- c(Iter, rep(i, nrow(speakers)/iterations))
+}
+speakers$Iter <- Iter
+speakers$Code_Iter <- paste(speakers$speakers, speakers$Iter, sep = "_")
+
+relevant_sets <- words_meta[words_meta$District %in% c("Rutul", "Akhty", "Tabasaran", "Khiv") & words_meta$Language != "Azerbaijani",]
+colnames(speakers)[1] <- "Code"
+relevant_sets$Code <- factor(relevant_sets$Code)
+Fake_words_meta <- left_join(relevant_sets, speakers,  by = "Code")
+```
+
+
+<!--This code chunk takes the new set of speakers, which is a bootstrapped version of the original one and samples new sets for each speaker. The concept ID is preserved bu the sets are assigned with a pan-Daghestanian probability.-->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+Fake_words_meta %>% group_by(`Concept nr.`) %>% mutate(New_Set = sample(Set)) -> Fake_words_meta
+```
+
+<!--Now, the loans that are irrelevant for the study have to be specified and removed because they may confound the signal we're interested in. These are the words possibly borrowed from Russian, Arabic and Persian. -->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+to_remove <- words_meta[which(words_meta$Code %in% c("E_Russian", "E_Arabic", "E_Persian")),]
+Fake_words_meta <- Fake_words_meta[which(Fake_words_meta$Set %nin% to_remove$Set),]
+```
+
+<!--Now we subset the loans from the inflated dataset. The procedure is the same as in the part on real data.-->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+Fake_A_loans <- as.data.frame(Fake_words_meta[Fake_words_meta$New_Set %in% A_Azeri_clean_Std$Set,])
+
+Fake_D_loans <- as.data.frame(Fake_words_meta[Fake_words_meta$New_Set %in% D_Azeri_clean_Std$Set,])
+```
+
+<!--Calculating the loanwords from each source in the permuted sample. Since the data are organized in a way that the wordlists with 0 loans are lost when subsetting, it is necessary to add the lost lists explicitely (see the *fake_counts* function). Then the districts have to be changed to "West vs. East" one again.-->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+Fake_A_counts <- fake_counts(Fake_A_loans, A_Azeri_Std_loans, "A_Azeri_Std")
+Fake_A_counts <- Fake_A_counts[-which(names(Fake_A_counts) %in% c("District"))]
+Fake_A_counts <- left_join(Fake_A_counts, counts_real[names(counts_real) %in% c("Code", "District")], by = "Code")
+Fake_A_counts$District[Fake_A_counts$District %in% c("Rutul", "Akhty")] <- "West"
+Fake_A_counts$District[Fake_A_counts$District %in% c("Tabasaran", "Khiv")] <- "East"
+Fake_A_means <- fake_means(Fake_A_counts)
+
+Fake_D_counts <- fake_counts(Fake_D_loans, D_Azeri_Std_loans, "D_Azeri_Std")
+Fake_D_counts <- Fake_D_counts[-which(names(Fake_D_counts) %in% c("District"))]
+Fake_D_counts <- left_join(Fake_D_counts, counts_real[names(counts_real) %in% c("Code", "District")], by = "Code")
+Fake_D_counts$District[Fake_D_counts$District %in% c("Rutul", "Akhty")] <- "West"
+Fake_D_counts$District[Fake_D_counts$District %in% c("Tabasaran", "Khiv")] <- "East"
+Fake_D_means <- fake_means(Fake_D_counts)
+
+```
+
+<!--The following two code chunks create the plots for East vs. West comparison.-->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+D_test <- Fake_A_means
+D_test$District[D_test$District %in% c("Tabasaran", "Khiv")] <- "East"
+D_test$District[D_test$District %in% c("Rutul", "Akhty")] <- "West"
+D_percentage_north <- scales::percent(nrow(D_test[D_test$District == "East" & D_test$Delta > 0,])/nrow(D_test[D_test$District == "East",]))
+D_percentage_south <- scales::percent(nrow(D_test[D_test$District == "West" & D_test$Delta > 0,])/nrow(D_test[D_test$District == "West",]))
+
+D_percentages <- c(paste("East:", as.character(D_percentage_north), "of Δ’s are greater than 0."), paste("West:", as.character(D_percentage_south), "of Δ’s are greater than 0."))
+names(D_percentages) <- c("East", "West")
+
+east_vs_west_A <- makeplot(D_test, "A-Azerbaijani, East vs. West")
+east_vs_west_A <- east_vs_west_A+xlim(-0.03,0.03)
+
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+D_test <- Fake_D_means
+D_test$District[D_test$District %in% c("Tabasaran", "Khiv")] <- "East"
+D_test$District[D_test$District %in% c("Rutul", "Akhty")] <- "West"
+D_percentage_north <- scales::percent(nrow(D_test[D_test$District == "East" & D_test$Delta > 0,])/nrow(D_test[D_test$District == "East",]))
+D_percentage_south <- scales::percent(nrow(D_test[D_test$District == "West" & D_test$Delta > 0,])/nrow(D_test[D_test$District == "West",]))
+
+D_percentages <- c(paste("East:", as.character(D_percentage_north), "of Δ’s are greater than 0."), paste("West:", as.character(D_percentage_south), "of Δ’s are greater than 0."))
+names(D_percentages) <- c("East", "West")
+
+east_vs_west_D <- makeplot(D_test, "D-Azerbaijani, East vs. West")
+east_vs_west_D <- east_vs_west_D+xlim(-0.03,0.03)
+
+```
+
+<!--The following two permutaiton tests are conducted the same way, so we do not comment on them. 
+
+### Tsakhurs vs. Lezgians and Rutuls in the West-->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+iterations <- 1000
+relevant_entries <- words_meta[words_meta$District %in% c("Rutul", "Akhty") & words_meta$Language != "Azerbaijani",]
+relevant_entries$District[relevant_entries$Language %in% c("Tsakhur")] <- "Tsakhur"
+relevant_entries$District[relevant_entries$Language %nin% c("Tsakhur")] <- "Other"
+relevant_entries <- relevant_entries[!duplicated(relevant_entries),]
+
+
+speakers <-  replicate(iterations, (relevant_entries[!duplicated(relevant_entries$Code),] %>% group_by(District) %>% sample_n(8)), simplify = "matrix")
+speakers <- unlist(speakers[4,])
+speakers <- as.data.frame(speakers)
+
+Iter <- c()
+for (i in c(1:iterations)){
+  Iter <- c(Iter, rep(i, nrow(speakers)/iterations))
+}
+speakers$Iter <- Iter
+speakers$Code_Iter <- paste(speakers$speakers, speakers$Iter, sep = "_")
+
+relevant_sets <- words_meta[words_meta$District %in% c("Rutul", "Akhty") & words_meta$Language != "Azerbaijani",]
+colnames(speakers)[1] <- "Code"
+relevant_sets$Code <- factor(relevant_sets$Code)
+Fake_words_meta <- left_join(relevant_sets, speakers,  by = "Code")
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+Fake_words_meta %>% group_by(`Concept nr.`) %>% mutate(New_Set = sample(Set)) -> Fake_words_meta
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+to_remove <- words_meta[which(words_meta$Code %in% c("E_Russian", "E_Arabic", "E_Persian")),]
+Fake_words_meta <- Fake_words_meta[which(Fake_words_meta$Set %nin% to_remove$Set),]
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+Fake_A_loans <- as.data.frame(Fake_words_meta[Fake_words_meta$New_Set %in% A_Azeri_clean_Std$Set,])
+
+Fake_D_loans <- as.data.frame(Fake_words_meta[Fake_words_meta$New_Set %in% D_Azeri_clean_Std$Set,])
+
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+Fake_A_counts <- fake_counts(Fake_A_loans, A_Azeri_Std_loans, "A_Azeri_Std")
+Fake_A_counts <- Fake_A_counts[-which(names(Fake_A_counts) %in% c("District"))]
+Fake_A_counts <- left_join(Fake_A_counts, counts_real[names(counts_real) %in% c("Code", "District")], by = "Code")
+Fake_A_counts$District[Fake_A_counts$Language %in% c("Tsakhur")] <- "Tsakhur"
+Fake_A_counts$District[Fake_A_counts$Language %nin% c("Tsakhur")] <- "Other"
+Fake_A_means <- fake_means(Fake_A_counts)
+
+Fake_D_counts <- fake_counts(Fake_D_loans, D_Azeri_Std_loans, "D_Azeri_Std")
+Fake_D_counts <- Fake_D_counts[-which(names(Fake_D_counts) %in% c("District"))]
+Fake_D_counts <- left_join(Fake_D_counts, counts_real[names(counts_real) %in% c("Code", "District")], by = "Code")
+Fake_D_counts$District[Fake_D_counts$Language %in% c("Tsakhur")] <- "Tsakhur"
+Fake_D_counts$District[Fake_D_counts$Language %nin% c("Tsakhur")] <- "Other"
+Fake_D_means <- fake_means(Fake_D_counts)
+
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+D_test <- Fake_A_means
+#D_test$District[D_test$District %in% c("Tabasaran", "Khiv")] <- "Southeast"
+#D_test$District[D_test$District %in% c("Rutul", "Akhty")] <- "Southwest"
+D_percentage_north <- scales::percent(nrow(D_test[D_test$District == "Tsakhur" & D_test$Delta > 0,])/nrow(D_test[D_test$District == "Tsakhur",]))
+D_percentage_south <- scales::percent(nrow(D_test[D_test$District == "Other" & D_test$Delta > 0,])/nrow(D_test[D_test$District == "Other",]))
+
+D_percentages <- c(paste("Tsakhur:", as.character(D_percentage_north), "of Δ’s are greater than 0."), paste("Rut. & Lez.:", as.character(D_percentage_south), "of Δ’s are greater than 0."))
+names(D_percentages) <- c("Tsakhur", "Other")
+
+p2_tsakhur_vs_other_A <- makeplot(D_test, "A-Azerbaijani in the West")
+p2_tsakhur_vs_other_A <- p2_tsakhur_vs_other_A+xlim(-0.03,0.03)
+
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+D_test <- Fake_D_means
+#D_test$District[D_test$District %in% c("Tabasaran", "Khiv")] <- "Southeast"
+#D_test$District[D_test$District %in% c("Rutul", "Akhty")] <- "Southwest"
+D_percentage_north <- scales::percent(nrow(D_test[D_test$District == "Tsakhur" & D_test$Delta > 0,])/nrow(D_test[D_test$District == "Tsakhur",]))
+D_percentage_south <- scales::percent(nrow(D_test[D_test$District == "Other" & D_test$Delta > 0,])/nrow(D_test[D_test$District == "Other",]))
+
+D_percentages <- c(paste("Tsakhur:", as.character(D_percentage_north), "of Δ’s are greater than 0."), paste("Rut. & Lez.:", as.character(D_percentage_south), "of Δ’s are greater than 0."))
+names(D_percentages) <- c("Tsakhur", "Other")
+
+p2_tsakhur_vs_other_D <- makeplot(D_test, "D-Azerbaijani in the West")
+p2_tsakhur_vs_other_D <- p2_tsakhur_vs_other_D+xlim(-0.03,0.03)
+
+```
+
+<!--### Tabasaran vs. Lezgian in the East-->
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+iterations <- 1000
+relevant_entries <- words_meta[words_meta$District %in% c("Khiv", "Tabasaran") & words_meta$Language != "Azerbaijani",]
+relevant_entries$District[relevant_entries$Language %in% c("Lezgian")] <- "Lezgian"
+relevant_entries$District[relevant_entries$Language %nin% c("Lezgian")] <- "Tabasaran"
+relevant_entries <- relevant_entries[!duplicated(relevant_entries),]
+
+
+speakers <-  replicate(iterations, (relevant_entries[!duplicated(relevant_entries$Code),] %>% group_by(District) %>% sample_n(10)), simplify = "matrix")
+speakers <- unlist(speakers[4,])
+speakers <- as.data.frame(speakers)
+
+Iter <- c()
+for (i in c(1:iterations)){
+  Iter <- c(Iter, rep(i, nrow(speakers)/iterations))
+}
+speakers$Iter <- Iter
+speakers$Code_Iter <- paste(speakers$speakers, speakers$Iter, sep = "_")
+
+relevant_sets <- words_meta[words_meta$District %in% c("Khiv", "Tabasaran") & words_meta$Language != "Azerbaijani",]
+colnames(speakers)[1] <- "Code"
+relevant_sets$Code <- factor(relevant_sets$Code)
+Fake_words_meta <- left_join(relevant_sets, speakers,  by = "Code")
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+Fake_words_meta %>% group_by(`Concept nr.`) %>% mutate(New_Set = sample(Set)) -> Fake_words_meta
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+to_remove <- words_meta[which(words_meta$Code %in% c("E_Russian", "E_Arabic", "E_Persian")),]
+Fake_words_meta <- Fake_words_meta[which(Fake_words_meta$Set %nin% to_remove$Set),]
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+Fake_A_loans <- as.data.frame(Fake_words_meta[Fake_words_meta$New_Set %in% A_Azeri_clean_Std$Set,])
+
+Fake_D_loans <- as.data.frame(Fake_words_meta[Fake_words_meta$New_Set %in% D_Azeri_clean_Std$Set,])
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+Fake_A_counts <- fake_counts(Fake_A_loans, A_Azeri_Std_loans, "A_Azeri_Std")
+Fake_A_counts <- Fake_A_counts[-which(names(Fake_A_counts) %in% c("District"))]
+Fake_A_counts <- left_join(Fake_A_counts, counts_real[names(counts_real) %in% c("Code", "District")], by = "Code")
+Fake_A_counts$District[Fake_A_counts$Language %in% c("Lezgian")] <- "Lezgian"
+Fake_A_counts$District[Fake_A_counts$Language %nin% c("Lezgian")] <- "Tabasaran"
+Fake_A_means <- fake_means(Fake_A_counts)
+
+Fake_D_counts <- fake_counts(Fake_D_loans, D_Azeri_Std_loans, "D_Azeri_Std")
+Fake_D_counts <- Fake_D_counts[-which(names(Fake_D_counts) %in% c("District"))]
+Fake_D_counts <- left_join(Fake_D_counts, counts_real[names(counts_real) %in% c("Code", "District")], by = "Code")
+Fake_D_counts$District[Fake_D_counts$Language %in% c("Lezgian")] <- "Lezgian"
+Fake_D_counts$District[Fake_D_counts$Language %nin% c("Lezgian")] <- "Tabasaran"
+Fake_D_means <- fake_means(Fake_D_counts)
+
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+D_test <- Fake_A_means
+#D_test$District[D_test$District %in% c("Tabasaran", "Khiv")] <- "Southeast"
+#D_test$District[D_test$District %in% c("Rutul", "Akhty")] <- "Southwest"
+D_percentage_north <- scales::percent(nrow(D_test[D_test$District == "Lezgian" & D_test$Delta > 0,])/nrow(D_test[D_test$District == "Lezgian",]))
+D_percentage_south <- scales::percent(nrow(D_test[D_test$District == "Tabasaran" & D_test$Delta > 0,])/nrow(D_test[D_test$District == "Tabasaran",]))
+
+D_percentages <- c(paste("Lezgian:", as.character(D_percentage_north), "of Δ’s are greater than 0."), paste("Tabasaran:", as.character(D_percentage_south), "of Δ’s are greater than 0."))
+names(D_percentages) <- c("Lezgian", "Tabasaran")
+
+p2_lezgian_vs_tabasaran_A <- makeplot(D_test, "A-Azerbaijani in the East")
+p2_lezgian_vs_tabasaran_A <- p2_lezgian_vs_tabasaran_A+xlim(-0.03,0.03)
+
+```
+
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+D_test <- Fake_D_means
+#D_test$District[D_test$District %in% c("Tabasaran", "Khiv")] <- "Southeast"
+#D_test$District[D_test$District %in% c("Rutul", "Akhty")] <- "Southwest"
+D_percentage_north <- scales::percent(nrow(D_test[D_test$District == "Lezgian" & D_test$Delta > 0,])/nrow(D_test[D_test$District == "Lezgian",]))
+D_percentage_south <- scales::percent(nrow(D_test[D_test$District == "Tabasaran" & D_test$Delta > 0,])/nrow(D_test[D_test$District == "Tabasaran",]))
+
+D_percentages <- c(paste("Lezgian:", as.character(D_percentage_north), "of Δ’s are greater than 0."), paste("Tabasaran:", as.character(D_percentage_south), "of Δ’s are greater than 0."))
+names(D_percentages) <- c("Lezgian", "Tabasaran")
+
+p2_lezgian_vs_tabasaran_D <- makeplot(D_test, "D-Azerbaijani in the East")
+p2_lezgian_vs_tabasaran_D <- p2_lezgian_vs_tabasaran_D+xlim(-0.03, 0.03)
+```
+
+<!--### Plotting-->
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+p_fig4 <- ggarrange(east_vs_west_A, east_vs_west_D, p2_tsakhur_vs_other_A, p2_tsakhur_vs_other_D, p2_lezgian_vs_tabasaran_A, p2_lezgian_vs_tabasaran_D, nrow = 3, ncol = 2)
+
+#ggsave(file="Fig4.svg", plot=p_fig4, width=20, height=10)
+```
+
+## Permutation Tests  (Fig. 4 in the paper)
+``` {r message = FALSE, error = FALSE, warning = FALSE, echo = FALSE, fig.width=20,fig.height=10}
+p_fig4
+```
+
+Content-wise, the simulation in the upper row confirms that the amount of sharings with A-Azerbaijani is significantly higher than random in the West and significantly lower than random in the East. Conversely, the amount of D-Azerbaijani loans is significantly lower in the West and significantly higher in the East. This is expected on the basis of geography and also suggested by the clusteringclusterization in Fig. 3. 
+
+The simulation in the second row confirms that A-Azerbaijani is much more present in Tsakhur elicitations than in other elicitiations in the West, which corresponds to the horizontal spread of the yellow cluster (the West) to Tsakhur elicitations in the right. As to the presence of D-Azerbaijani, there is no statistically significant difference but there may be a trend, corresponding to the slight cline of the cluster from the left (Lezgians) to the right (Tsakhurs).
+
+Finally, the bottom row shows results of simulations run within the much more homogeneous blue cluster, the East. We see that Lezgian villages show a presence of A-Azerbaijani that is higher than random at the marginally significant level; but we cannot say that the presence of A-Azerbaijani in Tabasaran villages is significantly lower than expected at random. Conversely, the presence of D-Azerbaijani in the Tabasaran villages is significantly higher than random, while its presence in Lezgian villages in the same area is not significantly lower than random. Note also that the deviation from random expectations (i.e. how much the distribution is displaced by the X-axis relative to x = 0) is visibly smaller than in the other two rows even when this deviation is statistically significant. We can see this in Fig. 3, where the East is much more compact and less internally structured than the West.
+
+# References (R and R packages only)
+
