@@ -66,7 +66,7 @@ NUMBER	ENGLISH	RUSSIAN	CONCEPTICON_ID	CONCEPTICON_GLOSS
 65	the gun	ружьё	1566	GUN
 66	the hammer	молоток	1481	HAMMER
 67	the hare	заяц	1190	HARE
-68	the herd	стадо (овец)	NA	NA
+68	the herd	стадо (овец)		
 69	the iron	железо	621	IRON
 70	the joke	шутка	3425	JOKE
 71	the lead	свинец (из чего пули)	627	LEAD (CHEMICAL ELEMENT)
@@ -100,7 +100,7 @@ NUMBER	ENGLISH	RUSSIAN	CONCEPTICON_ID	CONCEPTICON_GLOSS
 99	the pepper	перец (черный)	1385	PEPPER
 100	the pig	свинья	1337	PIG
 101	the pipe	трубка курительная	1124	PIPE
-102	the plum	слива	NA	NA
+102	the plum	слива		
 103	the pocket	карман	1851	POCKET
 104	the poison	яд	655	POISON
 105	the price	цена	657	PRICE
@@ -110,7 +110,7 @@ NUMBER	ENGLISH	RUSSIAN	CONCEPTICON_ID	CONCEPTICON_GLOSS
 109	the rice	рис	926	RICE
 110	the ring	кольцо	1374	RING
 111	the rope	веревка	1218	ROPE
-112	the rosary	четки	NA	NA
+112	the rosary	четки		
 113	the rust	ржавчина	3064	RUST
 114	the sand	песок (строительный)	671	SAND
 115	the saw	пила	1948	SAW

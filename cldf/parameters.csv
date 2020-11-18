@@ -1,0 +1,161 @@
+ID,Name,Concepticon_ID,Concepticon_Gloss,Number,Russian_Gloss
+1_theant,the ant,587,ANT,1,муравей
+2_thearch,the arch,876,ARCH,2,арка
+3_theaxeax,the axe/ax,677,AXE,3,топор
+4_theball,the ball,1845,BALL,4,"мяч, шар"
+5_thebarrel,the barrel,2548,BARREL,5,бочка
+6_thebat,the bat,1793,BAT,6,летучая мышь
+7_thebeak,the beak,73,BEAK,7,клюв
+8_thebeard,the beard,678,BEARD,8,борода
+9_thebeeswax,the beeswax,1931,BEESWAX,9,воск (пчелиный)
+10_thebelt,the belt,772,BELT,10,"ремень, пояс"
+11_theblanket,the blanket,806,BLANKET,11,одеяло
+12_theblister,the blister,1584,BLISTER,12,мозоль
+13_theboar,the boar,3154,WILD BOAR,13,"кабан, боров, вервь"
+14_thebody,the body,1480,BODY,14,тело
+15_thebottle,the bottle,1321,BOTTLE,15,бутылка
+16_theboundary,the boundary,2546,BORDER,16,"граница, межа"
+17_thebow,the bow,3228,BOW OR CROSSBOW,17,лук (оружие)
+18_thebracelet,the bracelet,1754,BRACELET,18,браслет
+19_thebridge,the bridge,1011,BRIDGE,19,мост
+20_thebroom,the broom,245,BROOM,20,метла
+21_thebucket,the bucket,2052,BUCKET,21,ведро
+22_thebutterfly,the butterfly,1791,BUTTERFLY,22,бабочка
+23_thecabbage,the cabbage,774,CABBAGE,23,капуста (кочанная)
+24_thecandle,the candle,1273,CANDLE,24,свеча
+25_thecarrot,the carrot,3085,CARROT,25,морковь
+26_thecat,the cat,1208,CAT,26,кошка
+27_thecattle,the cattle,1153,CATTLE,27,крупный рогатый скот
+28_thecave,the cave,1155,CAVE,28,пещера
+29_thechain,the chain,1627,CHAIN,29,цепь
+30_theclan,the clan,302,CLAN,30,"тухум, род"
+31_theclothingorclothes,the clothing or clothes,1895,CLOTHES,31,одежда
+32_thecockrooster,the cock/rooster,1511,ROOSTER,32,петух
+33_thecolourcolor,the colour/color,1613,COLOR,33,цвет
+34_thecopper,the copper,1825,COPPER,34,медь
+35_thecorpse,the corpse,767,CORPSE,35,труп
+36_thecross,the cross,1367,CROSS,36,крест
+37_thecup,the cup,476,CUP,37,чашка
+38_thedebt,the debt,1914,DEBT,38,долг
+39_thedrum,the drum,908,DRUM,39,барабан
+40_theduck,the duck,1360,DUCK,40,утка
+41_thedust,the dust,2,DUST,41,пыль
+42_theearring,the earring,770,EARRING,42,"серьга, сережка"
+43_theegg,the egg,744,EGG,43,яйцо
+44_thefairytale,the fairy tale,2937,FAIRY TALE,44,сказка
+45_thefamily,the family,194,FAMILY,45,семья
+46_thefelt,the felt,325,FELT,46,войлок
+47_thefermenteddrink,the fermented drink,404,ALCOHOL (FERMENTED DRINK),47,буза
+48_thefirewood,the firewood,10,FIREWOOD,48,"дрова, топливо"
+49_thefish,the fish,227,FISH,49,рыба
+50_thefist,the fist,1473,FIST,50,кулак
+51_theflour,the flour,1594,FLOUR,51,мука (пшеничная)
+52_theflower,the flower,239,FLOWER,52,цветок
+53_thefootprint,the footprint,318,FOOTPRINT,53,след (ноги)
+54_thefork,the fork,1302,FORK,54,вилка
+55_thefork2pitchfork,the fork(2)/pitchfork,337,PITCHFORK,55,вилы
+56_thefriend,the friend,1325,FRIEND,56,"друг, приятель"
+57_thefrog,the frog,503,FROG,57,лягушка
+58_thegarden,the garden,586,GARDEN,58,сад
+59_theglass,the glass,604,GLASS,59,стекло
+60_thegold,the gold,1369,GOLD,60,золото
+61_thegoose,the goose,1187,GOOSE,61,гусь
+62_thegrape,the grape,920,GRAPE,62,виноград
+63_thegrasshopper,the grasshopper,607,GRASSHOPPER,63,кузнечик
+64_theguest,the guest,1782,GUEST,64,гость
+65_thegun,the gun,1566,GUN,65,ружьё
+66_thehammer,the hammer,1481,HAMMER,66,молоток
+67_thehare,the hare,1190,HARE,67,заяц
+68_theherd,the herd,,,68,стадо (овец)
+69_theiron,the iron,621,IRON,69,железо
+70_thejoke,the joke,3425,JOKE,70,шутка
+71_thelead,the lead,627,LEAD (CHEMICAL ELEMENT),71,свинец (из чего пули)
+72_thelightning,the lightning,1654,LIGHTNING,72,молния
+73_thelion,the lion,1386,LION,73,лев
+74_thelip,the lip,478,LIP,74,губа
+75_thelizard,the lizard,632,LIZARD,75,ящерица
+76_thelock,the lock,1596,LOCK,76,замок (навесной)
+77_themaizecorn,the maize/corn,506,MAIZE,77,кукуруза
+78_themedicine,the medicine,1372,MEDICINE,78,лекарство
+79_themelon,the melon,507,MELON,79,дыня
+80_themirror,the mirror,1171,MIRROR,80,зеркало
+81_themoney,the money,1559,MONEY,81,деньги
+82_themortar2,the mortar(2),1731,MORTAR BINDER,82,известковый раствор
+83_themule,the mule,890,MULE,83,мул
+84_themushroom,the mushroom,641,MUSHROOM,84,гриб
+85_thenail,the nail,502,NAIL (TOOL),85,гвоздь
+86_theneedle1,the needle(1),1382,NEEDLE (FOR SEWING),86,игла
+87_theneighbour,the neighbour,1332,NEIGHBOUR,87,сосед
+88_thenest,the nest,539,NEST,88,гнездо
+89_thenettle,the nettle,33,NETTLE,89,крапива
+90_theoats,the oats,60,OAT,90,овёс (чем кормят лошадей)
+91_theorphan,the orphan,1149,ORPHAN,91,сирота
+92_theowl,the owl,735,OWL,92,сова
+93_thepaint,the paint,647,PAINT (PIGMENTS),93,краска
+94_thepaper,the paper,648,PAPER,94,бумага
+95_thepartridge,the partridge,3681,PARTRIDGE,95,куропатка
+96_thepea,the pea,2025,PEA,96,горох
+97_thepear,the pear,922,PEAR,97,груша
+98_thepencil,the pencil,2578,PENCIL,98,карандаш
+99_thepepper,the pepper,1385,PEPPER,99,перец (черный)
+100_thepig,the pig,1337,PIG,100,свинья
+101_thepipe,the pipe,1124,PIPE,101,трубка курительная
+102_theplum,the plum,,,102,слива
+103_thepocket,the pocket,1851,POCKET,103,карман
+104_thepoison,the poison,655,POISON,104,яд
+105_theprice,the price,657,PRICE,105,цена
+106_theprison,the prison,1281,PRISON,106,тюрьма
+107_thepumpkinorsquash,the pumpkin or squash,864,PUMPKIN,107,тыква
+108_thereindeercaribou,the reindeer/caribou,1936,DEER,108,олень
+109_therice,the rice,926,RICE,109,рис
+110_thering,the ring,1374,RING,110,кольцо
+111_therope,the rope,1218,ROPE,111,веревка
+112_therosary,the rosary,,,112,четки
+113_therust,the rust,3064,RUST,113,ржавчина
+114_thesand,the sand,671,SAND,114,песок (строительный)
+115_thesaw,the saw,1948,SAW,115,пила
+116_thescar,the scar,497,SCAR,116,шрам
+117_theschool,the school,673,SCHOOL,117,школа
+118_thescissorsorshears,the scissors or shears,1328,SCISSORS,118,ножницы
+119_thescythe,the scythe,20,SCYTHE,119,коса
+120_thesea,the sea,1474,SEA,120,море
+121_theshadeorshadow,the shade or shadow,2275,SHADOW,121,тень
+122_theshopstore,the shop/store,746,SHOP,122,магазин
+123_thesickle,the sickle,341,SICKLE,123,серп
+124_thesilver,the silver,759,SILVER,124,серебро
+125_theslave,the slave,812,SLAVE,125,раб
+126_thesledgesled,the sledge/sled,368,SLEDGE,126,санки
+127_thesleeve,the sleeve,2953,SLEEVE,127,рукав
+128_thesoap,the soap,788,SOAP,128,мыло
+129_thesong,the song,1096,SONG,129,песня
+130_thesoup,the soup,1547,SOUP,130,суп
+131_thespade,the spade,1176,SPADE,131,лопата
+132_thespider,the spider,843,SPIDER,132,паук
+133_thespoon,the spoon,1378,SPOON,133,ложка
+134_thesugar,the sugar,862,SUGAR,134,сахар
+135_thetable,the table,1775,TABLE,135,стол
+136_thetail,the tail,1220,TAIL,136,хвост
+137_thethief,the thief,1160,THIEF,137,вор
+138_thething,the thing,738,THING,138,"вещь, предмет"
+139_thethread,the thread,1161,THREAD,139,нитка
+140_thetime,the time,892,TIME,140,время
+141_thetobacco,the tobacco,974,TOBACCO,141,табак
+142_thetongs,the tongs,272,TONGS,142,"щипцы, клещи"
+143_thetowel,the towel,1021,TOWEL,143,полотенце
+144_thetrousers,the trousers,809,TROUSERS,144,брюки
+145_theturnip,the turnip,3062,TURNIP,145,репа
+146_thevoice,the voice,1363,VOICE,146,голос
+147_thewall,the wall,933,WALL (OF HOUSE),147,стена
+148_thewatermelon,the watermelon,2766,WATERMELON,148,арбуз
+149_thewedding,the wedding,1259,WEDDING,149,свадьба
+150_theweek,the week,1469,WEEK,150,неделя
+151_thewheel,the wheel,710,WHEEL,151,колесо
+152_thewhip,the whip,2630,WHIP,152,"кнут, хлыст (для лошади)"
+153_thewidow,the widow,1756,WIDOW,153,вдова
+154_thewindow,the window,1375,WINDOW,154,окно
+155_thewine,the wine,1524,WINE,155,вино
+156_thewing,the wing,1257,WING,156,крыло
+157_thewolf,the wolf,522,WOLF,157,волк
+158_thework,the work,984,WORK (LABOUR),158,работа
+159_theworm,the worm,1219,WORM,159,червяк
+160_theyear,the year,1226,YEAR,160,год
