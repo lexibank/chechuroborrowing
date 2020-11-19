@@ -1,92 +1,92 @@
 List_ID	DataType	ID	Name	Family	SubGroup	Glottocode	Village	Latitude	Longitude	District	Source
-2	Speaker	Arkhit1	Lezgian	East-Caucasian	Lezgic	lezg1247	Arkhit	41.734607	47.97302	Khiv	
-3	Speaker	Arkhit2	Lezgian	East-Caucasian	Lezgic	lezg1247	Arkhit	41.734607	47.97302	Khiv	
-4	Speaker	Arkhit3	Lezgian	East-Caucasian	Lezgic	lezg1247	Arkhit	41.734607	47.97302	Khiv	
-5	Speaker	Arkhit4	Lezgian	East-Caucasian	Lezgic	lezg1247	Arkhit	41.734607	47.97302	Khiv	
-6	Speaker	Arkhit5	Lezgian	East-Caucasian	Lezgic	lezg1247	Arkhit	41.734607	47.97302	Khiv	
-7	Speaker	Arkhit6	Lezgian	East-Caucasian	Lezgic	lezg1247	Arkhit	41.734607	47.97302	Khiv	
-13	Expert	E_Azerbaijani	Azerbaijani	Altaic	Turkic	nort2697	Expert	40.97767	46.4737	Expert	
-22	Dictionary	E_Russian	Russian	Indo-European	Slavic	russ1263	Expert	59	50	Expert	
-26	Speaker	Darvag1	Azerbaijani	Altaic	Turkic	nort2697	Darvag	42.022285	48.065912	Tabasaran	
-27	Speaker	Darvag2	Azerbaijani	Altaic	Turkic	nort2697	Darvag	42.022285	48.065912	Tabasaran	
-28	Speaker	Darvag3	Azerbaijani	Altaic	Turkic	nort2697	Darvag	42.022285	48.065912	Tabasaran	
-29	Speaker	Darvag4	Azerbaijani	Altaic	Turkic	nort2697	Darvag	42.022285	48.065912	Tabasaran	
-31	Speaker	Darvag5	Azerbaijani	Altaic	Turkic	nort2697	Darvag	42.022285	48.065912	Tabasaran	
-32	Speaker	Darvag6	Azerbaijani	Altaic	Turkic	nort2697	Darvag	42.022285	48.065912	Tabasaran	
-33	Speaker	Dyubek1	Tabasaran	East-Caucasian	Lezgic	taba1259	Dyubek	42.0208	47.969528	Tabasaran	
-34	Speaker	Dyubek2	Tabasaran	East-Caucasian	Lezgic	taba1259	Dyubek	42.0208	47.969528	Tabasaran	
-35	Speaker	Dyubek3	Tabasaran	East-Caucasian	Lezgic	taba1259	Dyubek	42.0208	47.969528	Tabasaran	
-36	Speaker	Dyubek4	Tabasaran	East-Caucasian	Lezgic	taba1259	Dyubek	42.0208	47.969528	Tabasaran	
-45	Speaker	Gelmets1	Tsakhur	East-Caucasian	Lezgic	tsak1249	Gelmets	41.62466	47.17889	Rutul	
-46	Speaker	Gelmets2	Tsakhur	East-Caucasian	Lezgic	tsak1249	Gelmets	41.62466	47.17889	Rutul	
-47	Speaker	Gelmets3	Tsakhur	East-Caucasian	Lezgic	tsak1249	Gelmets	41.62466	47.17889	Rutul	
-51	Speaker	Ikhrek4	Rutul	East-Caucasian	Lezgic	rutu1240	Ikhrek	41.693931	47.210005	Rutul	
-52	Speaker	Ilisu1	Azerbaijani	Altaic	Turkic	nort2697	Ilisu	41.46694	47.05917	Qax	
-57	Speaker	Khapil1	Tabasaran	East-Caucasian	Lezgic	taba1259	Khapil’	41.98722	47.97731	Tabasaran	
-58	Speaker	Khapil2	Tabasaran	East-Caucasian	Lezgic	taba1259	Khapil’	41.98722	47.97731	Tabasaran	
-59	Speaker	Khapil3	Tabasaran	East-Caucasian	Lezgic	taba1259	Khapil’	41.98722	47.97731	Tabasaran	
-60	Speaker	Khapil4	Tabasaran	East-Caucasian	Lezgic	taba1259	Khapil’	41.98722	47.97731	Tabasaran	
-61	Speaker	Khapil5	Tabasaran	East-Caucasian	Lezgic	taba1259	Khapil’	41.98722	47.97731	Tabasaran	
-62	Speaker	Khiv1	Tabasaran	East-Caucasian	Lezgic	taba1259	Khiv	41.7533	47.9286	Khiv	
-63	Speaker	Khiv2	Tabasaran	East-Caucasian	Lezgic	taba1259	Khiv	41.7533	47.9286	Khiv	
-64	Speaker	Khiv3	Tabasaran	East-Caucasian	Lezgic	taba1259	Khiv	41.7533	47.9286	Khiv	
-65	Speaker	Khiv4	Tabasaran	East-Caucasian	Lezgic	taba1259	Khiv	41.7533	47.9286	Khiv	
-66	Speaker	Khlyut1	Lezgian	East-Caucasian	Lezgic	lezg1247	Khlyut	41.496274	47.533824	Rutul	
-67	Speaker	Khlyut2	Lezgian	East-Caucasian	Lezgic	lezg1247	Khlyut	41.496274	47.533824	Rutul	
-68	Speaker	Khlyut3	Lezgian	East-Caucasian	Lezgic	lezg1247	Khlyut	41.496274	47.533824	Rutul	
-69	Speaker	Khlyut4	Lezgian	East-Caucasian	Lezgic	lezg1247	Khlyut	41.496274	47.533824	Rutul	
-70	Speaker	Khlyut5	Lezgian	East-Caucasian	Lezgic	lezg1247	Khlyut	41.496274	47.533824	Rutul	
-71	Speaker	Khoredzh1	Tabasaran	East-Caucasian	Lezgic	taba1259	Khoredzh	41.74914	47.8667	Khiv	
-72	Speaker	Khoredzh2	Tabasaran	East-Caucasian	Lezgic	taba1259	Khoredzh	41.74914	47.8667	Khiv	
-74	Speaker	Khoredzh4	Tabasaran	East-Caucasian	Lezgic	taba1259	Khoredzh	41.74914	47.8667	Khiv	
-75	Speaker	Khoredzh5	Tabasaran	East-Caucasian	Lezgic	taba1259	Khoredzh	41.74914	47.8667	Khiv	
-76	Speaker	Khoredzh6	Tabasaran	East-Caucasian	Lezgic	taba1259	Khoredzh	41.74914	47.8667	Khiv	
-81	Speaker	Kiche1	Rutul	East-Caucasian	Lezgic	rutu1240	Kiche	41.53146	47.48171	Rutul	
-82	Speaker	Kiche2	Rutul	East-Caucasian	Lezgic	rutu1240	Kiche	41.53146	47.48171	Rutul	
-90	Speaker	Laka1	Tabasaran	East-Caucasian	Lezgic	taba1259	Laka	41.75705	47.88114	Khiv	
-91	Speaker	Laka2	Tabasaran	East-Caucasian	Lezgic	taba1259	Laka	41.75705	47.88114	Khiv	
-92	Speaker	Laka3	Tabasaran	East-Caucasian	Lezgic	taba1259	Laka	41.75705	47.88114	Khiv	
-93	Speaker	Laka4	Tabasaran	East-Caucasian	Lezgic	taba1259	Laka	41.75705	47.88114	Khiv	
-94	Speaker	Laka5	Tabasaran	East-Caucasian	Lezgic	taba1259	Laka	41.75705	47.88114	Khiv	
-95	Speaker	Laka6	Tabasaran	East-Caucasian	Lezgic	taba1259	Laka	41.75705	47.88114	Khiv	
-98	Speaker	Mikik1	Tsakhur	East-Caucasian	Lezgic	tsak1249	Mikik	41.63753	47.16822	Rutul	
-99	Speaker	Mikik2	Tsakhur	East-Caucasian	Lezgic	tsak1249	Mikik	41.63753	47.16822	Rutul	
-101	Speaker	Qax2	Azerbaijani	Altaic	Turkic	nort2697	Qax	41.41944	46.91806	Qax	
-102	Speaker	Qax3	Azerbaijani	Altaic	Turkic	nort2697	Qax	41.41944	46.91806	Qax	
-106	Speaker	Qax7	Azerbaijani	Altaic	Turkic	nort2697	Qax	41.41944	46.91806	Qax	
-108	Speaker	Qax9	Azerbaijani	Altaic	Turkic	nort2697	Qax	41.41944	46.91806	Qax	
-115	Speaker	Tatil1	Tabasaran	East-Caucasian	Lezgic	taba1259	Tatil’	41.99269	47.98826	Tabasaran	
-116	Speaker	Tatil2	Tabasaran	East-Caucasian	Lezgic	taba1259	Tatil’	41.99269	47.98826	Tabasaran	
-117	Speaker	Tatil3	Tabasaran	East-Caucasian	Lezgic	taba1259	Tatil’	41.99269	47.98826	Tabasaran	
-118	Speaker	Tatil4	Tabasaran	East-Caucasian	Lezgic	taba1259	Tatil’	41.99269	47.98826	Tabasaran	
-119	Speaker	Tatil5	Tabasaran	East-Caucasian	Lezgic	taba1259	Tatil’	41.99269	47.98826	Tabasaran	
-121	Speaker	Tsinit1	Lezgian	East-Caucasian	Lezgic	lezg1247	Tsinit	41.72324	48.00882	Khiv	
-122	Speaker	Tsinit2	Lezgian	East-Caucasian	Lezgic	lezg1247	Tsinit	41.72324	48.00882	Khiv	
-124	Speaker	Tsinit4	Lezgian	East-Caucasian	Lezgic	lezg1247	Tsinit	41.72324	48.00882	Khiv	
-125	Speaker	Tsinit5	Lezgian	East-Caucasian	Lezgic	lezg1247	Tsinit	41.72324	48.00882	Khiv	
-128	Speaker	Yagdyg2	Tabasaran	East-Caucasian	Lezgic	taba1259	Yagdyg	41.980115	47.970578	Tabasaran	
-129	Speaker	Yagdyg3	Tabasaran	East-Caucasian	Lezgic	taba1259	Yagdyg	41.980115	47.970578	Tabasaran	
-130	Speaker	Yagdyg4	Tabasaran	East-Caucasian	Lezgic	taba1259	Yagdyg	41.980115	47.970578	Tabasaran	
-131	Speaker	Yagdyg5	Tabasaran	East-Caucasian	Lezgic	taba1259	Yagdyg	41.980115	47.970578	Tabasaran	
-132	Speaker	Yagdyg6	Tabasaran	East-Caucasian	Lezgic	taba1259	Yagdyg	41.980115	47.970578	Tabasaran	
-133	Speaker	Yersi1	Azerbaijani	Altaic	Turkic	nort2697	Yersi	42.018844	48.012897	Tabasaran	
-134	Speaker	Yersi2	Azerbaijani	Altaic	Turkic	nort2697	Yersi	42.018844	48.012897	Tabasaran	
-135	Speaker	Yersi3	Azerbaijani	Altaic	Turkic	nort2697	Yersi	42.018844	48.012897	Tabasaran	
-147	Speaker	Kusur1	Avar	East-Caucasian	Avar	avar1256	Kusur	41.4658	46.5641	Rutul	
-149	Expert	E_Arabic	Arabic	Afro-Asiatic	Semitic	egyp1253	Expert	31	31	Expert	
-153	Expert	E_Persian	Persian	Indo-European	Iranian	west2369	Expert	28.65928	55.15861	Expert	
-162	Speaker	Kurdul1	Tsakhur	East-Caucasian	Lezgic	tsak1249	Kurdul	41.581482	47.17811	Rutul	
-163	Speaker	Kurdul2	Tsakhur	East-Caucasian	Lezgic	tsak1249	Kurdul	41.581482	47.17811	Rutul	
-164	Speaker	Kurdul3	Tsakhur	East-Caucasian	Lezgic	tsak1249	Kurdul	41.581482	47.17811	Rutul	
-165	Speaker	Fiy1	Lezgian	East-Caucasian	Lezgic	lezg1247	Fiy	41.285241	47.565016	Akhty	
-166	Speaker	Fiy2	Lezgian	East-Caucasian	Lezgic	lezg1247	Fiy	41.285241	47.565016	Akhty	
-167	Speaker	Gdym1	Lezgian	East-Caucasian	Lezgic	lezg1247	Gdym	41.310094	47.468052	Akhty	
-168	Speaker	Gdym2	Lezgian	East-Caucasian	Lezgic	lezg1247	Gdym	41.310094	47.468052	Akhty	
-169	Speaker	Khnov1	Rutul	East-Caucasian	Lezgic	rutu1240	Khnov	41.378933	47.442273	Akhty	
-170	Speaker	Khnov2	Rutul	East-Caucasian	Lezgic	rutu1240	Khnov	41.378933	47.442273	Akhty	
-171	Speaker	Khnov3	Rutul	East-Caucasian	Lezgic	rutu1240	Khnov	41.378933	47.442273	Akhty	
-172	Speaker	Kina4	Rutul	East-Caucasian	Lezgic	rutu1240	Kina	41.6166	47.2647	Rutul	
-173	Speaker	Kina5	Rutul	East-Caucasian	Lezgic	rutu1240	Kina	41.6166	47.2647	Rutul	
-174	Speaker	Kina3a	Rutul	East-Caucasian	Lezgic	rutu1240	Kina	41.6166	47.2647	Rutul	
-175	Speaker	Kina2a	Rutul	East-Caucasian	Lezgic	rutu1240	Kina	41.6166	47.2647	Rutul	
-176	Speaker	Kina1a	Rutul	East-Caucasian	Lezgic	rutu1240	Kina	41.6166	47.2647	Rutul	
+2	Speaker	Arkhit1	Lezgian	East-Caucasian	Lezgic	lezg1247	Arkhit	41.734607	47.97302	Khiv	chechuroFieldData
+3	Speaker	Arkhit2	Lezgian	East-Caucasian	Lezgic	lezg1247	Arkhit	41.734607	47.97302	Khiv	chechuroFieldData
+4	Speaker	Arkhit3	Lezgian	East-Caucasian	Lezgic	lezg1247	Arkhit	41.734607	47.97302	Khiv	chechuroFieldData
+5	Speaker	Arkhit4	Lezgian	East-Caucasian	Lezgic	lezg1247	Arkhit	41.734607	47.97302	Khiv	chechuroFieldData
+6	Speaker	Arkhit5	Lezgian	East-Caucasian	Lezgic	lezg1247	Arkhit	41.734607	47.97302	Khiv	chechuroFieldData
+7	Speaker	Arkhit6	Lezgian	East-Caucasian	Lezgic	lezg1247	Arkhit	41.734607	47.97302	Khiv	chechuroFieldData
+13	Expert	E_Azerbaijani	Azerbaijani	Altaic	Turkic	nort2697	Expert	40.97767	46.4737	Expert	suleymanovPC
+22	Dictionary	E_Russian	Russian	Indo-European	Slavic	russ1263	Expert	59	50	Expert	chechuroFieldData
+26	Speaker	Darvag1	Azerbaijani	Altaic	Turkic	nort2697	Darvag	42.022285	48.065912	Tabasaran	chechuroFieldData
+27	Speaker	Darvag2	Azerbaijani	Altaic	Turkic	nort2697	Darvag	42.022285	48.065912	Tabasaran	chechuroFieldData
+28	Speaker	Darvag3	Azerbaijani	Altaic	Turkic	nort2697	Darvag	42.022285	48.065912	Tabasaran	chechuroFieldData
+29	Speaker	Darvag4	Azerbaijani	Altaic	Turkic	nort2697	Darvag	42.022285	48.065912	Tabasaran	chechuroFieldData
+31	Speaker	Darvag5	Azerbaijani	Altaic	Turkic	nort2697	Darvag	42.022285	48.065912	Tabasaran	chechuroFieldData
+32	Speaker	Darvag6	Azerbaijani	Altaic	Turkic	nort2697	Darvag	42.022285	48.065912	Tabasaran	chechuroFieldData
+33	Speaker	Dyubek1	Tabasaran	East-Caucasian	Lezgic	taba1259	Dyubek	42.0208	47.969528	Tabasaran	chechuroFieldData
+34	Speaker	Dyubek2	Tabasaran	East-Caucasian	Lezgic	taba1259	Dyubek	42.0208	47.969528	Tabasaran	chechuroFieldData
+35	Speaker	Dyubek3	Tabasaran	East-Caucasian	Lezgic	taba1259	Dyubek	42.0208	47.969528	Tabasaran	chechuroFieldData
+36	Speaker	Dyubek4	Tabasaran	East-Caucasian	Lezgic	taba1259	Dyubek	42.0208	47.969528	Tabasaran	chechuroFieldData
+45	Speaker	Gelmets1	Tsakhur	East-Caucasian	Lezgic	tsak1249	Gelmets	41.62466	47.17889	Rutul	chechuroFieldData
+46	Speaker	Gelmets2	Tsakhur	East-Caucasian	Lezgic	tsak1249	Gelmets	41.62466	47.17889	Rutul	chechuroFieldData
+47	Speaker	Gelmets3	Tsakhur	East-Caucasian	Lezgic	tsak1249	Gelmets	41.62466	47.17889	Rutul	chechuroFieldData
+51	Speaker	Ikhrek4	Rutul	East-Caucasian	Lezgic	rutu1240	Ikhrek	41.693931	47.210005	Rutul	chechuroFieldData
+52	Speaker	Ilisu1	Azerbaijani	Altaic	Turkic	nort2697	Ilisu	41.46694	47.05917	Qax	chechuroFieldData
+57	Speaker	Khapil1	Tabasaran	East-Caucasian	Lezgic	taba1259	Khapil’	41.98722	47.97731	Tabasaran	chechuroFieldData
+58	Speaker	Khapil2	Tabasaran	East-Caucasian	Lezgic	taba1259	Khapil’	41.98722	47.97731	Tabasaran	chechuroFieldData
+59	Speaker	Khapil3	Tabasaran	East-Caucasian	Lezgic	taba1259	Khapil’	41.98722	47.97731	Tabasaran	chechuroFieldData
+60	Speaker	Khapil4	Tabasaran	East-Caucasian	Lezgic	taba1259	Khapil’	41.98722	47.97731	Tabasaran	chechuroFieldData
+61	Speaker	Khapil5	Tabasaran	East-Caucasian	Lezgic	taba1259	Khapil’	41.98722	47.97731	Tabasaran	chechuroFieldData
+62	Speaker	Khiv1	Tabasaran	East-Caucasian	Lezgic	taba1259	Khiv	41.7533	47.9286	Khiv	chechuroFieldData
+63	Speaker	Khiv2	Tabasaran	East-Caucasian	Lezgic	taba1259	Khiv	41.7533	47.9286	Khiv	chechuroFieldData
+64	Speaker	Khiv3	Tabasaran	East-Caucasian	Lezgic	taba1259	Khiv	41.7533	47.9286	Khiv	chechuroFieldData
+65	Speaker	Khiv4	Tabasaran	East-Caucasian	Lezgic	taba1259	Khiv	41.7533	47.9286	Khiv	chechuroFieldData
+66	Speaker	Khlyut1	Lezgian	East-Caucasian	Lezgic	lezg1247	Khlyut	41.496274	47.533824	Rutul	chechuroFieldData
+67	Speaker	Khlyut2	Lezgian	East-Caucasian	Lezgic	lezg1247	Khlyut	41.496274	47.533824	Rutul	chechuroFieldData
+68	Speaker	Khlyut3	Lezgian	East-Caucasian	Lezgic	lezg1247	Khlyut	41.496274	47.533824	Rutul	chechuroFieldData
+69	Speaker	Khlyut4	Lezgian	East-Caucasian	Lezgic	lezg1247	Khlyut	41.496274	47.533824	Rutul	chechuroFieldData
+70	Speaker	Khlyut5	Lezgian	East-Caucasian	Lezgic	lezg1247	Khlyut	41.496274	47.533824	Rutul	chechuroFieldData
+71	Speaker	Khoredzh1	Tabasaran	East-Caucasian	Lezgic	taba1259	Khoredzh	41.74914	47.8667	Khiv	chechuroFieldData
+72	Speaker	Khoredzh2	Tabasaran	East-Caucasian	Lezgic	taba1259	Khoredzh	41.74914	47.8667	Khiv	chechuroFieldData
+74	Speaker	Khoredzh4	Tabasaran	East-Caucasian	Lezgic	taba1259	Khoredzh	41.74914	47.8667	Khiv	chechuroFieldData
+75	Speaker	Khoredzh5	Tabasaran	East-Caucasian	Lezgic	taba1259	Khoredzh	41.74914	47.8667	Khiv	chechuroFieldData
+76	Speaker	Khoredzh6	Tabasaran	East-Caucasian	Lezgic	taba1259	Khoredzh	41.74914	47.8667	Khiv	chechuroFieldData
+81	Speaker	Kiche1	Rutul	East-Caucasian	Lezgic	rutu1240	Kiche	41.53146	47.48171	Rutul	chechuroFieldData
+82	Speaker	Kiche2	Rutul	East-Caucasian	Lezgic	rutu1240	Kiche	41.53146	47.48171	Rutul	chechuroFieldData
+90	Speaker	Laka1	Tabasaran	East-Caucasian	Lezgic	taba1259	Laka	41.75705	47.88114	Khiv	chechuroFieldData
+91	Speaker	Laka2	Tabasaran	East-Caucasian	Lezgic	taba1259	Laka	41.75705	47.88114	Khiv	chechuroFieldData
+92	Speaker	Laka3	Tabasaran	East-Caucasian	Lezgic	taba1259	Laka	41.75705	47.88114	Khiv	chechuroFieldData
+93	Speaker	Laka4	Tabasaran	East-Caucasian	Lezgic	taba1259	Laka	41.75705	47.88114	Khiv	chechuroFieldData
+94	Speaker	Laka5	Tabasaran	East-Caucasian	Lezgic	taba1259	Laka	41.75705	47.88114	Khiv	chechuroFieldData
+95	Speaker	Laka6	Tabasaran	East-Caucasian	Lezgic	taba1259	Laka	41.75705	47.88114	Khiv	chechuroFieldData
+98	Speaker	Mikik1	Tsakhur	East-Caucasian	Lezgic	tsak1249	Mikik	41.63753	47.16822	Rutul	chechuroFieldData
+99	Speaker	Mikik2	Tsakhur	East-Caucasian	Lezgic	tsak1249	Mikik	41.63753	47.16822	Rutul	chechuroFieldData
+101	Speaker	Qax2	Azerbaijani	Altaic	Turkic	nort2697	Qax	41.41944	46.91806	Qax	chechuroFieldData
+102	Speaker	Qax3	Azerbaijani	Altaic	Turkic	nort2697	Qax	41.41944	46.91806	Qax	chechuroFieldData
+106	Speaker	Qax7	Azerbaijani	Altaic	Turkic	nort2697	Qax	41.41944	46.91806	Qax	chechuroFieldData
+108	Speaker	Qax9	Azerbaijani	Altaic	Turkic	nort2697	Qax	41.41944	46.91806	Qax	chechuroFieldData
+115	Speaker	Tatil1	Tabasaran	East-Caucasian	Lezgic	taba1259	Tatil’	41.99269	47.98826	Tabasaran	chechuroFieldData
+116	Speaker	Tatil2	Tabasaran	East-Caucasian	Lezgic	taba1259	Tatil’	41.99269	47.98826	Tabasaran	chechuroFieldData
+117	Speaker	Tatil3	Tabasaran	East-Caucasian	Lezgic	taba1259	Tatil’	41.99269	47.98826	Tabasaran	chechuroFieldData
+118	Speaker	Tatil4	Tabasaran	East-Caucasian	Lezgic	taba1259	Tatil’	41.99269	47.98826	Tabasaran	chechuroFieldData
+119	Speaker	Tatil5	Tabasaran	East-Caucasian	Lezgic	taba1259	Tatil’	41.99269	47.98826	Tabasaran	chechuroFieldData
+121	Speaker	Tsinit1	Lezgian	East-Caucasian	Lezgic	lezg1247	Tsinit	41.72324	48.00882	Khiv	chechuroFieldData
+122	Speaker	Tsinit2	Lezgian	East-Caucasian	Lezgic	lezg1247	Tsinit	41.72324	48.00882	Khiv	chechuroFieldData
+124	Speaker	Tsinit4	Lezgian	East-Caucasian	Lezgic	lezg1247	Tsinit	41.72324	48.00882	Khiv	chechuroFieldData
+125	Speaker	Tsinit5	Lezgian	East-Caucasian	Lezgic	lezg1247	Tsinit	41.72324	48.00882	Khiv	chechuroFieldData
+128	Speaker	Yagdyg2	Tabasaran	East-Caucasian	Lezgic	taba1259	Yagdyg	41.980115	47.970578	Tabasaran	chechuroFieldData
+129	Speaker	Yagdyg3	Tabasaran	East-Caucasian	Lezgic	taba1259	Yagdyg	41.980115	47.970578	Tabasaran	chechuroFieldData
+130	Speaker	Yagdyg4	Tabasaran	East-Caucasian	Lezgic	taba1259	Yagdyg	41.980115	47.970578	Tabasaran	chechuroFieldData
+131	Speaker	Yagdyg5	Tabasaran	East-Caucasian	Lezgic	taba1259	Yagdyg	41.980115	47.970578	Tabasaran	chechuroFieldData
+132	Speaker	Yagdyg6	Tabasaran	East-Caucasian	Lezgic	taba1259	Yagdyg	41.980115	47.970578	Tabasaran	chechuroFieldData
+133	Speaker	Yersi1	Azerbaijani	Altaic	Turkic	nort2697	Yersi	42.018844	48.012897	Tabasaran	chechuroFieldData
+134	Speaker	Yersi2	Azerbaijani	Altaic	Turkic	nort2697	Yersi	42.018844	48.012897	Tabasaran	chechuroFieldData
+135	Speaker	Yersi3	Azerbaijani	Altaic	Turkic	nort2697	Yersi	42.018844	48.012897	Tabasaran	chechuroFieldData
+147	Speaker	Kusur1	Avar	East-Caucasian	Avar	avar1256	Kusur	41.4658	46.5641	Rutul	chechuroFieldData
+149	Expert	E_Arabic	Arabic	Afro-Asiatic	Semitic	egyp1253	Expert	31	31	Expert	suleymanovPC
+153	Expert	E_Persian	Persian	Indo-European	Iranian	west2369	Expert	28.65928	55.15861	Expert	armandPC
+162	Speaker	Kurdul1	Tsakhur	East-Caucasian	Lezgic	tsak1249	Kurdul	41.581482	47.17811	Rutul	chechuroFieldData
+163	Speaker	Kurdul2	Tsakhur	East-Caucasian	Lezgic	tsak1249	Kurdul	41.581482	47.17811	Rutul	chechuroFieldData
+164	Speaker	Kurdul3	Tsakhur	East-Caucasian	Lezgic	tsak1249	Kurdul	41.581482	47.17811	Rutul	chechuroFieldData
+165	Speaker	Fiy1	Lezgian	East-Caucasian	Lezgic	lezg1247	Fiy	41.285241	47.565016	Akhty	chechuroFieldData
+166	Speaker	Fiy2	Lezgian	East-Caucasian	Lezgic	lezg1247	Fiy	41.285241	47.565016	Akhty	chechuroFieldData
+167	Speaker	Gdym1	Lezgian	East-Caucasian	Lezgic	lezg1247	Gdym	41.310094	47.468052	Akhty	chechuroFieldData
+168	Speaker	Gdym2	Lezgian	East-Caucasian	Lezgic	lezg1247	Gdym	41.310094	47.468052	Akhty	chechuroFieldData
+169	Speaker	Khnov1	Rutul	East-Caucasian	Lezgic	rutu1240	Khnov	41.378933	47.442273	Akhty	chechuroFieldData
+170	Speaker	Khnov2	Rutul	East-Caucasian	Lezgic	rutu1240	Khnov	41.378933	47.442273	Akhty	chechuroFieldData
+171	Speaker	Khnov3	Rutul	East-Caucasian	Lezgic	rutu1240	Khnov	41.378933	47.442273	Akhty	chechuroFieldData
+172	Speaker	Kina4	Rutul	East-Caucasian	Lezgic	rutu1240	Kina	41.6166	47.2647	Rutul	chechuroFieldData
+173	Speaker	Kina5	Rutul	East-Caucasian	Lezgic	rutu1240	Kina	41.6166	47.2647	Rutul	chechuroFieldData
+174	Speaker	Kina3a	Rutul	East-Caucasian	Lezgic	rutu1240	Kina	41.6166	47.2647	Rutul	chechuroFieldData
+175	Speaker	Kina2a	Rutul	East-Caucasian	Lezgic	rutu1240	Kina	41.6166	47.2647	Rutul	chechuroFieldData
+176	Speaker	Kina1a	Rutul	East-Caucasian	Lezgic	rutu1240	Kina	41.6166	47.2647	Rutul	chechuroFieldData

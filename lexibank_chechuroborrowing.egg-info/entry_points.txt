@@ -1,0 +1,6 @@
+[cldfbench.commands]
+chechuroborrowing = commands
+
+[lexibank.dataset]
+chechuroborrowing = lexibank_chechuroborrowing:Dataset
+

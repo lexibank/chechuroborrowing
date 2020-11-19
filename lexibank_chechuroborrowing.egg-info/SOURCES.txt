@@ -1,0 +1,11 @@
+README.md
+lexibank_chechuroborrowing.py
+setup.cfg
+setup.py
+lexibank_chechuroborrowing.egg-info/PKG-INFO
+lexibank_chechuroborrowing.egg-info/SOURCES.txt
+lexibank_chechuroborrowing.egg-info/dependency_links.txt
+lexibank_chechuroborrowing.egg-info/entry_points.txt
+lexibank_chechuroborrowing.egg-info/not-zip-safe
+lexibank_chechuroborrowing.egg-info/requires.txt
+lexibank_chechuroborrowing.egg-info/top_level.txt
