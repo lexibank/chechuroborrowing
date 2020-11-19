@@ -16,7 +16,7 @@ This dataset is licensed under a CC-BY-4.0 license
 - **Varieties:** 91
 - **Concepts:** 160
 - **Lexemes:** 15,227
-- **Sources:** 91
+- **Sources:** 4
 - **Synonymy:** 1.08
 - **Cognacy:** 15,227 cognates in 1,493 cognate sets (681 singletons)
 - **Cognate Diversity:** 0.09

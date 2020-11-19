@@ -71,12 +71,11 @@ class Dataset(BaseDataset):
                     Parameter_ID=concepts[row['Concept nr.']],
                     Value=row['Standard Transcription'],
                     Form=row['Standard Transcription'],
-                    Source=languages[row['Code']]
+                    Source=row['Source']
                     )
             args.writer.add_cognate(
                     lexeme=lexeme,
                     Cognateset_ID=row['Set'].replace(' ', ''),
                     Cognate_Detection_Method='expert',
-                    Source='chechuro2021'
+                    Source=row['Source']
                     )
-
