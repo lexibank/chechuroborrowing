@@ -36,46 +36,42 @@ class Dataset(BaseDataset):
     concept_class = CustomConcept
     language_class = CustomLanguage
 
-    # define the way in which forms should be handled
-    #form_spec = FormSpec(
-    #    brackets={"(": ")", "[": "]"},
-    #    separators=";/,",
-    #    missing_data=("?", "-"),
-    #    strip_inside_brackets=True,
-    #)
+    form_spec = FormSpec(
+        brackets={"(": ")", "[": "]"},
+        separators=";/,",
+        missing_data=("?", "-"),
+        strip_inside_brackets=True,
+        first_form_only=True,
+    )
 
     def cmd_makecldf(self, args):
-        """
-        Convert the raw data to a CLDF dataset.
-        """
-        data = self.raw_dir.read_csv('words_IJB_submission.tsv', dicts=True, delimiter='\t')
+        data = self.raw_dir.read_csv("words_IJB_submission.tsv", dicts=True, delimiter="\t")
         args.writer.add_sources()
         languages = args.writer.add_languages(lookup_factory="ID")
-        sources = {l['ID']: l['Source'] for l in self.languages}
         concepts = {}
         for concept in self.concepts:
             idx = concept["NUMBER"].split("-")[-1] + "_" + slug(concept["ENGLISH"])
             args.writer.add_concept(
-                    ID=idx,
-                    Name=concept['ENGLISH'],
-                    Concepticon_ID=concept['CONCEPTICON_ID'],
-                    Concepticon_Gloss=concept['CONCEPTICON_GLOSS'],
-                    Russian_Gloss=concept['RUSSIAN'],
-                    Number=concept['NUMBER']
-                    )
-            concepts[concept['NUMBER']] = idx
+                ID=idx,
+                Name=concept["ENGLISH"],
+                Concepticon_ID=concept["CONCEPTICON_ID"],
+                Concepticon_Gloss=concept["CONCEPTICON_GLOSS"],
+                Russian_Gloss=concept["RUSSIAN"],
+                Number=concept["NUMBER"],
+            )
+            concepts[concept["NUMBER"]] = idx
 
         for row in progressbar(data, desc="cldfify"):
-            lexeme = args.writer.add_form(
-                    Language_ID=languages[row['Code']],
-                    Parameter_ID=concepts[row['Concept nr.']],
-                    Value=row['Standard Transcription'],
-                    Form=row['Standard Transcription'],
-                    Source=row['Source']
-                    )
+            lexemes = args.writer.add_forms_from_value(
+                Language_ID=languages[row["Code"]],
+                Parameter_ID=concepts[row["Concept nr."]],
+                Value=row["Standard Transcription"],
+                Source=row["Source"],
+            )
+
             args.writer.add_cognate(
-                    lexeme=lexeme,
-                    Cognateset_ID=row['Set'].replace(' ', ''),
-                    Cognate_Detection_Method='expert',
-                    Source=row['Source']
-                    )
+                lexeme=lexemes[0],
+                Cognateset_ID=row["Set"].replace(" ", ""),
+                Cognate_Detection_Method="expert",
+                Source=row["Source"],
+            )

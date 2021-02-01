@@ -8,11 +8,100 @@
     "creators": [
         {
             "name": "Ilia Chechuro"
+        },
+        {
+            "name": "Michael Daniel"
+        },
+        {
+            "name": "Samira Verhees"
+        },
+        {
+            "name": "Nina Dobrushina"
         }
     ],
     "contributors": [
         {
-            "name": "Johann-Mattis List",
+            "name": "Arseniy Averin",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Faina Daniel",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Lilia Terekhina",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Zarina Kerimova",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Elena Armand",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Maria Bulakh",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Tagir Gadzhiakhmedov",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Shakhban Khapizov",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Gadir Mamedov",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Nestan Magalashvili",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Ramazan Mazhidov",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Zarina Molochieva",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Murad Suleymanov",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Manana Tandaschvili",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Evgenia Egorova",
+            "type": "Other"
+        },
+        {
+            "name": "Violetta Ivanova",
+            "type": "Other"
+        },
+        {
+            "name": "Aleksandra Martynova",
+            "type": "Other"
+        },
+        {
+            "name": "Anastasia Safonova",
+            "type": "Other"
+        },
+        {
+            "name": "Anna Vishenkova",
+            "type": "Other"
+        },
+        {
+            "name": "Anastasia Chasovskikh",
+            "type": "Other"
+        },
+        {
+            "name": "Zarina Kerimova",
             "type": "Other"
         }
     ],
