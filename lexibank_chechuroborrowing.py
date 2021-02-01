@@ -1,12 +1,11 @@
 from pathlib import Path
 
-from pylexibank.dataset import Dataset as BaseDataset
-from pylexibank import progressbar
 import attr
 from clldutils.misc import slug
 from pylexibank import Concept, Language, Lexeme, FormSpec
 from pylexibank.dataset import Dataset as BaseDataset
 from pylexibank.util import progressbar
+
 
 @attr.s
 class CustomConcept(Concept):
@@ -23,10 +22,12 @@ class CustomLanguage(Language):
     List_ID = attr.ib(default=None)
     SubGroup = attr.ib(default=None)
 
+
 @attr.s
 class CustomLexeme(Lexeme):
     Stem = attr.ib(default=None)
     EntryId = attr.ib(default=None)
+
 
 class Dataset(BaseDataset):
     dir = Path(__file__).parent
