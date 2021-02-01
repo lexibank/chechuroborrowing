@@ -18,10 +18,7 @@ setup(
     entry_points={
         "lexibank.dataset": [
             "chechuroborrowing=lexibank_chechuroborrowing:Dataset",
-        ],
-        "cldfbench.commands": [
-            "chechuroborrowing=commands",
-        ],
+        ]
     },
     install_requires=[
         "pylexibank>=2.1",
