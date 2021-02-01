@@ -12363,156 +12363,96 @@ List ID	Source	Type	Code	Concept nr.	Concept	Set	Standard Transcription	Stem	ent
 147	chechurofielddata	Speaker	Kusur1	154	the window	154 - 25	горгъиб	25	30722
 147	chechurofielddata	Speaker	Kusur1	159	the worm	159 - 16	борохь	16	30874
 147	chechurofielddata	Speaker	Kusur1	159	the worm	159 - 16	борохь	16	30875
-149	bulakhpc	Expert	E_Arabic	1	the ant	1 - 4	"نَمْلَة
-"	4	17
-149	bulakhpc	Expert	E_Arabic	2	the arch	2 - 18	"قَوْس
-"	18	193
-149	bulakhpc	Expert	E_Arabic	3	the axe/ax	3 - 2	"فَأْس
-"	2	232
+149	bulakhpc	Expert	E_Arabic	1	the ant	1 - 4	"نَمْلَة"	4	17
+149	bulakhpc	Expert	E_Arabic	2	the arch	2 - 18	"قَوْس"	18	193
+149	bulakhpc	Expert	E_Arabic	3	the axe/ax	3 - 2	"فَأْس"	2	232
 149	bulakhpc	Expert	E_Arabic	4	the ball	4 - 3	كُرَة	3	458
 149	bulakhpc	Expert	E_Arabic	5	the barrel	5 - 1	بَرْمِيل	1	487
-149	bulakhpc	Expert	E_Arabic	6	the bat	6 - 3	"خُفَّاش
-"	3	578
-149	bulakhpc	Expert	E_Arabic	7	the beak	7 - 4	"مِنْقَار
-"	4	681
+149	bulakhpc	Expert	E_Arabic	6	the bat	6 - 3	"خُفَّاش"	3	578
+149	bulakhpc	Expert	E_Arabic	7	the beak	7 - 4	"مِنْقَار"	4	681
 149	bulakhpc	Expert	E_Arabic	8	the beard	8 - 18	ذَقْن	18	893
-149	bulakhpc	Expert	E_Arabic	9	the beeswax	9 - 6	"شَمْعُ الْعَسَل
-"	6	961
-149	bulakhpc	Expert	E_Arabic	10	the belt	10 - 35	"حِزَام
-"	35	1146
-149	bulakhpc	Expert	E_Arabic	11	the blanket	11 - 9	"بَطَّانِيَّة
-"	9	1275
-149	bulakhpc	Expert	E_Arabic	12	the blister	12 - 37	"نَفْطَة
-"	37	1385
-149	bulakhpc	Expert	E_Arabic	13	the boar	13 - 30	"خِنْْزِيرذَكَر
-"	30	1509
-149	bulakhpc	Expert	E_Arabic	14	the body	14 - 5	"جِسْم
-"	5	1541
-149	bulakhpc	Expert	E_Arabic	15	the bottle	15 - 8	"زُجَاجَة
-"	8	1746
+149	bulakhpc	Expert	E_Arabic	9	the beeswax	9 - 6	"شَمْعُ الْعَسَل"	6	961
+149	bulakhpc	Expert	E_Arabic	10	the belt	10 - 35	"حِزَام"	35	1146
+149	bulakhpc	Expert	E_Arabic	11	the blanket	11 - 9	"بَطَّانِيَّة"	9	1275
+149	bulakhpc	Expert	E_Arabic	12	the blister	12 - 37	"نَفْطَة"	37	1385
+149	bulakhpc	Expert	E_Arabic	13	the boar	13 - 30	"خِنْْزِيرذَكَر"	30	1509
+149	bulakhpc	Expert	E_Arabic	14	the body	14 - 5	"جِسْم"	5	1541
+149	bulakhpc	Expert	E_Arabic	15	the bottle	15 - 8	"زُجَاجَة"	8	1746
 149	bulakhpc	Expert	E_Arabic	16	the boundary	16 - 4	حَدّ	4	1813
-149	bulakhpc	Expert	E_Arabic	17	the bow	17 - 6	"قَوْس
-"	6	1950
-149	bulakhpc	Expert	E_Arabic	18	the bracelet	18 - 14	"سِوَار
-"	14	2017
-149	bulakhpc	Expert	E_Arabic	19	the bridge	19 - 1	"جِسْر
-"	1	2061
-149	bulakhpc	Expert	E_Arabic	20	the broom	20 - 34	"مِكْنَسَة
-"	34	2337
-149	bulakhpc	Expert	E_Arabic	21	the bucket	21 - 2	"دَلْو
-"	2	2343
-149	bulakhpc	Expert	E_Arabic	22	the butterfly	22 - 44	"فَرَاشَة
-"	44	2543
-149	bulakhpc	Expert	E_Arabic	23	the cabbage	23 - 7	"كُرُنْب
-"	7	2676
+149	bulakhpc	Expert	E_Arabic	17	the bow	17 - 6	"قَوْس"	6	1950
+149	bulakhpc	Expert	E_Arabic	18	the bracelet	18 - 14	"سِوَار"	14	2017
+149	bulakhpc	Expert	E_Arabic	19	the bridge	19 - 1	"جِسْر"	1	2061
+149	bulakhpc	Expert	E_Arabic	20	the broom	20 - 34	"مِكْنَسَة"	34	2337
+149	bulakhpc	Expert	E_Arabic	21	the bucket	21 - 2	"دَلْو"	2	2343
+149	bulakhpc	Expert	E_Arabic	22	the butterfly	22 - 44	"فَرَاشَة"	44	2543
+149	bulakhpc	Expert	E_Arabic	23	the cabbage	23 - 7	"كُرُنْب"	7	2676
 149	bulakhpc	Expert	E_Arabic	24	the candle	24 - 1	شَمْعَة	1	2762
-149	bulakhpc	Expert	E_Arabic	25	the carrot	25 - 2	"جَزَرَة
-"	2	2817
+149	bulakhpc	Expert	E_Arabic	25	the carrot	25 - 2	"جَزَرَة"	2	2817
 149	bulakhpc	Expert	E_Arabic	26	the cat	26 - 1	قِطّ	1	2997
-149	bulakhpc	Expert	E_Arabic	27	the cattle	27 - 32	"مَاشِيَة
-"	32	3126
-149	bulakhpc	Expert	E_Arabic	28	the cave	28 - 1	"مَغَارَة
-"	1	3141
+149	bulakhpc	Expert	E_Arabic	27	the cattle	27 - 32	"مَاشِيَة"	32	3126
+149	bulakhpc	Expert	E_Arabic	28	the cave	28 - 1	"مَغَارَة"	1	3141
 149	bulakhpc	Expert	E_Arabic	29	the chain	29 - 6	سِلْسِلَة	6	3228
-149	bulakhpc	Expert	E_Arabic	30	the clan	30 - 21	"قَبِيلَة
-"	21	3392
-149	bulakhpc	Expert	E_Arabic	31	the clothing or clothes	31 - 8	"مَلابِس
-"	8	3481
-149	bulakhpc	Expert	E_Arabic	32	the cock/rooster	32 - 1	"دِيك
-"	1	3541
+149	bulakhpc	Expert	E_Arabic	30	the clan	30 - 21	"قَبِيلَة"	21	3392
+149	bulakhpc	Expert	E_Arabic	31	the clothing or clothes	31 - 8	"مَلابِس"	8	3481
+149	bulakhpc	Expert	E_Arabic	32	the cock/rooster	32 - 1	"دِيك"	1	3541
 149	bulakhpc	Expert	E_Arabic	33	the colour/color	33 - 1	لَوْن	1	3680
-149	bulakhpc	Expert	E_Arabic	34	the copper	34 - 6	"نُحَاس
-"	6	3845
-149	bulakhpc	Expert	E_Arabic	35	the corpse	35 - 29	"جُثَّة
-"	29	4060
-149	bulakhpc	Expert	E_Arabic	36	the cross	36 - 5	"صَلِيب
-"	5	4145
-149	bulakhpc	Expert	E_Arabic	37	the cup	37 - 9	"فِنْجَان
-"	9	4188
+149	bulakhpc	Expert	E_Arabic	34	the copper	34 - 6	"نُحَاس"	6	3845
+149	bulakhpc	Expert	E_Arabic	35	the corpse	35 - 29	"جُثَّة"	29	4060
+149	bulakhpc	Expert	E_Arabic	36	the cross	36 - 5	"صَلِيب"	5	4145
+149	bulakhpc	Expert	E_Arabic	37	the cup	37 - 9	"فِنْجَان"	9	4188
 149	bulakhpc	Expert	E_Arabic	38	the debt	38 - 5	دَيْن	5	4340
 149	bulakhpc	Expert	E_Arabic	39	the drum	39 - 11	طَبْل	11	4429
 149	bulakhpc	Expert	E_Arabic	40	the duck	40 - 1	بَطَّة	1	4539
-149	bulakhpc	Expert	E_Arabic	41	the dust	41 - 25	"غُبَار
-"	25	4743
-149	bulakhpc	Expert	E_Arabic	42	the earring	42 - 43	"حَلْقَة الأُذْن
-"	43	4862
-149	bulakhpc	Expert	E_Arabic	43	the egg	43 - 3	"بَيْضَة
-"	3	4868
-149	bulakhpc	Expert	E_Arabic	44	the fairy tale	44 - 2	"حِكَايَة
-"	2	4970
-149	bulakhpc	Expert	E_Arabic	45	the family	45 - 18	"أُسْرَة
-"	18	5198
-149	bulakhpc	Expert	E_Arabic	46	the felt	46 - 4	"لُبَّاد
-"	4	5209
-149	bulakhpc	Expert	E_Arabic	47	the fermented drink	47 - 25	"شَرَاب مُخَمَّر
-"	25	5341
-149	bulakhpc	Expert	E_Arabic	48	the firewood	48 - 23	"حَطَب
-"	23	5464
-149	bulakhpc	Expert	E_Arabic	49	the fish	49 - 4	"سَمَكَة
-"	4	5527
-149	bulakhpc	Expert	E_Arabic	50	the fist	50 - 15	"قَبْضَة الْيَد
-"	15	5708
-149	bulakhpc	Expert	E_Arabic	51	the flour	51 - 5	"طَحِين
-"	5	5723
-149	bulakhpc	Expert	E_Arabic	52	the flower	52 - 8	"زَهْرَة
-"	8	5889
+149	bulakhpc	Expert	E_Arabic	41	the dust	41 - 25	"غُبَار"	25	4743
+149	bulakhpc	Expert	E_Arabic	42	the earring	42 - 43	"حَلْقَة الأُذْن"	43	4862
+149	bulakhpc	Expert	E_Arabic	43	the egg	43 - 3	"بَيْضَة"	3	4868
+149	bulakhpc	Expert	E_Arabic	44	the fairy tale	44 - 2	"حِكَايَة"	2	4970
+149	bulakhpc	Expert	E_Arabic	45	the family	45 - 18	"أُسْرَة"	18	5198
+149	bulakhpc	Expert	E_Arabic	46	the felt	46 - 4	"لُبَّاد"	4	5209
+149	bulakhpc	Expert	E_Arabic	47	the fermented drink	47 - 25	"شَرَاب مُخَمَّر"	25	5341
+149	bulakhpc	Expert	E_Arabic	48	the firewood	48 - 23	"حَطَب"	23	5464
+149	bulakhpc	Expert	E_Arabic	49	the fish	49 - 4	"سَمَكَة"	4	5527
+149	bulakhpc	Expert	E_Arabic	50	the fist	50 - 15	"قَبْضَة الْيَد"	15	5708
+149	bulakhpc	Expert	E_Arabic	51	the flour	51 - 5	"طَحِين"	5	5723
+149	bulakhpc	Expert	E_Arabic	52	the flower	52 - 8	"زَهْرَة"	8	5889
 149	bulakhpc	Expert	E_Arabic	53	the footprint	53 - 1	أَثَر	1	5994
 149	bulakhpc	Expert	E_Arabic	54	the fork	54 - 5	شَوْكَة	5	6135
-149	bulakhpc	Expert	E_Arabic	55	the fork(2)/pitchfork	55 - 5	"مِذْرَاة
-"	5	6209
-149	bulakhpc	Expert	E_Arabic	56	the friend	56 - 24	"صَدِيق
-"	24	6424
-149	bulakhpc	Expert	E_Arabic	57	the frog	57 - 37	"ضِفْدِع
-"	37	6535
-149	bulakhpc	Expert	E_Arabic	58	the garden	58 - 10	"بُسْتَان
-"	10	6663
-149	bulakhpc	Expert	E_Arabic	59	the glass	59 - 7	"زُجَاج
-"	7	6758
+149	bulakhpc	Expert	E_Arabic	55	the fork(2)/pitchfork	55 - 5	"مِذْرَاة"	5	6209
+149	bulakhpc	Expert	E_Arabic	56	the friend	56 - 24	"صَدِيق"	24	6424
+149	bulakhpc	Expert	E_Arabic	57	the frog	57 - 37	"ضِفْدِع"	37	6535
+149	bulakhpc	Expert	E_Arabic	58	the garden	58 - 10	"بُسْتَان"	10	6663
+149	bulakhpc	Expert	E_Arabic	59	the glass	59 - 7	"زُجَاج"	7	6758
 149	bulakhpc	Expert	E_Arabic	60	the gold	60 - 2	ذَهَب	2	6889
-149	bulakhpc	Expert	E_Arabic	61	the goose	61 - 8	"اِوَزَّة
-"	8	7029
-149	bulakhpc	Expert	E_Arabic	62	the grape	62 - 19	"عِنَب
-"	19	7182
-149	bulakhpc	Expert	E_Arabic	63	the grasshopper	63 - 33	"جُنْدُب
-"	33	7260
+149	bulakhpc	Expert	E_Arabic	61	the goose	61 - 8	"اِوَزَّة"	8	7029
+149	bulakhpc	Expert	E_Arabic	62	the grape	62 - 19	"عِنَب"	19	7182
+149	bulakhpc	Expert	E_Arabic	63	the grasshopper	63 - 33	"جُنْدُب"	33	7260
 149	bulakhpc	Expert	E_Arabic	64	the guest	64 - 1	ضَيْف	1	7265
 149	bulakhpc	Expert	E_Arabic	65	the gun	65 - 1	بُنْدُقِيَّة	1	7416
 149	bulakhpc	Expert	E_Arabic	66	the hammer	66 - 3	مِطْرَقَة	3	7604
-149	bulakhpc	Expert	E_Arabic	67	the hare	67 - 1	"أَرْنَب
-"	1	7694
-149	bulakhpc	Expert	E_Arabic	68	the herd	68 - 48	"قَطِيع
-"	48	7991
+149	bulakhpc	Expert	E_Arabic	67	the hare	67 - 1	"أَرْنَب"	1	7694
+149	bulakhpc	Expert	E_Arabic	68	the herd	68 - 48	"قَطِيع"	48	7991
 149	bulakhpc	Expert	E_Arabic	69	the iron	69 - 3	حَدِيد	3	8016
 149	bulakhpc	Expert	E_Arabic	70	the joke	70 - 22	نُكْتَة	22	8295
 149	bulakhpc	Expert	E_Arabic	71	the lead	71 - 5	رَصَاص	5	8405
-149	bulakhpc	Expert	E_Arabic	72	the lightning	72 - 1	"بَرْق
-"	1	8441
+149	bulakhpc	Expert	E_Arabic	72	the lightning	72 - 1	"بَرْق"	1	8441
 149	bulakhpc	Expert	E_Arabic	73	the lion	73 - 2	أَسَد	2	8665
-149	bulakhpc	Expert	E_Arabic	74	the lip	74 - 4	"شَفَة
-"	4	8736
+149	bulakhpc	Expert	E_Arabic	74	the lip	74 - 4	"شَفَة"	4	8736
 149	bulakhpc	Expert	E_Arabic	75	the lizard	75 - 9	سِحْلِيَّة	9	8857
-149	bulakhpc	Expert	E_Arabic	76	the lock	76 - 3	"قُفْل
-"	3	8981
-149	bulakhpc	Expert	E_Arabic	77	the maize/corn	77 - 3	"ذُرَة
-"	3	9069
+149	bulakhpc	Expert	E_Arabic	76	the lock	76 - 3	"قُفْل"	3	8981
+149	bulakhpc	Expert	E_Arabic	77	the maize/corn	77 - 3	"ذُرَة"	3	9069
 149	bulakhpc	Expert	E_Arabic	78	the medicine	78 - 3	دَوَاء	3	9341
-149	bulakhpc	Expert	E_Arabic	79	the melon	79 - 4	"بَطِيخ أَصْفَر
-"	4	9356
+149	bulakhpc	Expert	E_Arabic	79	the melon	79 - 4	"بَطِيخ أَصْفَر"	4	9356
 149	bulakhpc	Expert	E_Arabic	80	the mirror	80 - 19	مِرْآة	19	9631
 149	bulakhpc	Expert	E_Arabic	81	the money	81 - 17	مَال	17	9790
-149	bulakhpc	Expert	E_Arabic	82	the mortar(2)	82 - 24	"مُونَة السِّمِنْت
-"	24	9925
+149	bulakhpc	Expert	E_Arabic	82	the mortar(2)	82 - 24	"مُونَة السِّمِنْت"	24	9925
 149	bulakhpc	Expert	E_Arabic	83	the mule	83 - 2	بَغْل	2	10011
-149	bulakhpc	Expert	E_Arabic	84	the mushroom	84 - 3	"فُطْر
-"	3	10042
+149	bulakhpc	Expert	E_Arabic	84	the mushroom	84 - 3	"فُطْر"	3	10042
 149	bulakhpc	Expert	E_Arabic	85	the nail	85 - 5	مِسْمار	5	10184
-149	bulakhpc	Expert	E_Arabic	86	the needle(1)	86 - 26	"اِبْرَة
-"	26	10386
+149	bulakhpc	Expert	E_Arabic	86	the needle(1)	86 - 26	"اِبْرَة"	26	10386
 149	bulakhpc	Expert	E_Arabic	87	the neighbour	87 - 1	جار	1	10388
 149	bulakhpc	Expert	E_Arabic	88	the nest	88 - 9	عُشّ	9	10555
 149	bulakhpc	Expert	E_Arabic	89	the nettle	89 - 6	قُرَّاص	6	10695
-149	bulakhpc	Expert	E_Arabic	90	the oats	90 - 4	"شُوفَان
-"	4	10830
+149	bulakhpc	Expert	E_Arabic	90	the oats	90 - 4	"شُوفَان"	4	10830
 149	bulakhpc	Expert	E_Arabic	91	the orphan	91 - 3	يَتِيم	3	11001
 149	bulakhpc	Expert	E_Arabic	92	the owl	92 - 3	بُومَة	3	11047
 149	bulakhpc	Expert	E_Arabic	93	the paint	93 - 2	دِهَان	2	11131
@@ -12521,17 +12461,12 @@ List ID	Source	Type	Code	Concept nr.	Concept	Set	Standard Transcription	Stem	ent
 149	bulakhpc	Expert	E_Arabic	96	the pea	96 - 2	بَازِلاء	2	11450
 149	bulakhpc	Expert	E_Arabic	96	the pea	96 - 20	كُمَّثْرَى	20	11566
 149	bulakhpc	Expert	E_Arabic	97	the pear	97 - 3	ﺇِجَّاص	3	11591
-149	bulakhpc	Expert	E_Arabic	98	the pencil	98 - 1	"قَلَم
-"	1	11775
-149	bulakhpc	Expert	E_Arabic	99	the pepper	99 - 3	"فِلْفِل
-"	3	11822
-149	bulakhpc	Expert	E_Arabic	100	the pig	100 - 4	"خِنْزِير
-"	4	12010
+149	bulakhpc	Expert	E_Arabic	98	the pencil	98 - 1	"قَلَم"	1	11775
+149	bulakhpc	Expert	E_Arabic	99	the pepper	99 - 3	"فِلْفِل"	3	11822
+149	bulakhpc	Expert	E_Arabic	100	the pig	100 - 4	"خِنْزِير"	4	12010
 149	bulakhpc	Expert	E_Arabic	101	the pipe	101 - 12	أُنْبُوب	12	12162
-149	bulakhpc	Expert	E_Arabic	102	the plum	102 - 20	"خَوْخ
-"	20	12204
-149	bulakhpc	Expert	E_Arabic	103	the pocket	103 - 1	"جَيْب
-"	1	12345
+149	bulakhpc	Expert	E_Arabic	102	the plum	102 - 20	"خَوْخ"	20	12204
+149	bulakhpc	Expert	E_Arabic	103	the pocket	103 - 1	"جَيْب"	1	12345
 149	bulakhpc	Expert	E_Arabic	104	the poison	104 - 2	سَمّ	2	12406
 149	bulakhpc	Expert	E_Arabic	105	the price	105 - 4	سِعْر	4	12694
 149	bulakhpc	Expert	E_Arabic	106	the prison	106 - 6	سِجْن	6	12705
@@ -12539,75 +12474,53 @@ List ID	Source	Type	Code	Concept nr.	Concept	Set	Standard Transcription	Stem	ent
 149	bulakhpc	Expert	E_Arabic	108	the reindeer/caribou	108 - 23	رَنَّة	23	13018
 149	bulakhpc	Expert	E_Arabic	109	the rice	109 - 1	أَرُزّ	1	13021
 149	bulakhpc	Expert	E_Arabic	110	the ring	110 - 34	حَلْقَة	34	13274
-149	bulakhpc	Expert	E_Arabic	111	the rope	111 - 2	"حَبْل
-"	2	13280
-149	bulakhpc	Expert	E_Arabic	112	the rosary	112 - 4	"مِسْبَحَة
-"	4	13409
-149	bulakhpc	Expert	E_Arabic	113	the rust	113 - 3	"صَدَأ
-"	3	13517
-149	bulakhpc	Expert	E_Arabic	114	the sand	114 - 6	"رَمْل
-"	6	13706
+149	bulakhpc	Expert	E_Arabic	111	the rope	111 - 2	"حَبْل"	2	13280
+149	bulakhpc	Expert	E_Arabic	112	the rosary	112 - 4	"مِسْبَحَة"	4	13409
+149	bulakhpc	Expert	E_Arabic	113	the rust	113 - 3	"صَدَأ"	3	13517
+149	bulakhpc	Expert	E_Arabic	114	the sand	114 - 6	"رَمْل"	6	13706
 149	bulakhpc	Expert	E_Arabic	115	the saw	115 - 1	مِنْشَار	1	13783
-149	bulakhpc	Expert	E_Arabic	116	the scar	116 - 8	"نَدَب
-"	8	13891
+149	bulakhpc	Expert	E_Arabic	116	the scar	116 - 8	"نَدَب"	8	13891
 149	bulakhpc	Expert	E_Arabic	117	the school	117 - 5	مَدْرَسَة	5	14058
 149	bulakhpc	Expert	E_Arabic	118	the scissors or shears	118 - 5	مِقَصّ	5	14152
 149	bulakhpc	Expert	E_Arabic	119	the scythe	119 - 7	مِنْجَل	7	14330
 149	bulakhpc	Expert	E_Arabic	120	the sea	120 - 1	بَحْر	1	14385
-149	bulakhpc	Expert	E_Arabic	121	the shade or shadow	121 - 9	"ظِلّ
-"	9	14564
-149	bulakhpc	Expert	E_Arabic	122	the shop/store	122 - 5	"مَخْزَن
-"	5	14812
+149	bulakhpc	Expert	E_Arabic	121	the shade or shadow	121 - 9	"ظِلّ"	9	14564
+149	bulakhpc	Expert	E_Arabic	122	the shop/store	122 - 5	"مَخْزَن"	5	14812
 149	bulakhpc	Expert	E_Arabic	123	the sickle	123 - 33	مِنْجَل	33	14918
-149	bulakhpc	Expert	E_Arabic	124	the silver	124 - 2	"فِضَّة
-"	2	14985
+149	bulakhpc	Expert	E_Arabic	124	the silver	124 - 2	"فِضَّة"	2	14985
 149	bulakhpc	Expert	E_Arabic	125	the slave	125 - 2	عَبْد	2	15086
-149	bulakhpc	Expert	E_Arabic	126	the sledge/sled	126 - 27	"زَلَّاقَة
-"	27	15296
+149	bulakhpc	Expert	E_Arabic	126	the sledge/sled	126 - 27	"زَلَّاقَة"	27	15296
 149	bulakhpc	Expert	E_Arabic	127	the sleeve	127 - 3	كُمّ	3	15302
-149	bulakhpc	Expert	E_Arabic	128	the soap	128 - 1	"صَابُون
-"	1	15553
+149	bulakhpc	Expert	E_Arabic	128	the soap	128 - 1	"صَابُون"	1	15553
 149	bulakhpc	Expert	E_Arabic	129	the song	129 - 32	أُغْنِيَّة	32	15723
-149	bulakhpc	Expert	E_Arabic	130	the soup	130 - 2	"شُرْبَة
-"	2	15781
+149	bulakhpc	Expert	E_Arabic	130	the soup	130 - 2	"شُرْبَة"	2	15781
 149	bulakhpc	Expert	E_Arabic	131	the spade	131 - 7	مِجْرَفَة	7	15925
-149	bulakhpc	Expert	E_Arabic	132	the spider	132 - 2	"عَنْكَبُوت
-"	2	15956
+149	bulakhpc	Expert	E_Arabic	132	the spider	132 - 2	"عَنْكَبُوت"	2	15956
 149	bulakhpc	Expert	E_Arabic	133	the spoon	133 - 6	مِلْعَقَة	6	16126
-149	bulakhpc	Expert	E_Arabic	134	the sugar	134 - 2	"سُكَّر
-"	2	16337
+149	bulakhpc	Expert	E_Arabic	134	the sugar	134 - 2	"سُكَّر"	2	16337
 149	bulakhpc	Expert	E_Arabic	135	the table	135 - 9	طَاوِلَة	9	16517
 149	bulakhpc	Expert	E_Arabic	136	the tail	136 - 2	ذَنَب	2	16523
-149	bulakhpc	Expert	E_Arabic	137	the thief	137 - 5	"لُصّ
-"	5	16711
-149	bulakhpc	Expert	E_Arabic	138	the thing	138 - 5	"شَيْء
-"	5	16873
+149	bulakhpc	Expert	E_Arabic	137	the thief	137 - 5	"لُصّ"	5	16711
+149	bulakhpc	Expert	E_Arabic	138	the thing	138 - 5	"شَيْء"	5	16873
 149	bulakhpc	Expert	E_Arabic	139	the thread	139 - 6	خَيْط	6	16964
 149	bulakhpc	Expert	E_Arabic	140	the time	140 - 1	وَقْت	1	17144
-149	bulakhpc	Expert	E_Arabic	141	the tobacco	141 - 12	"تِبْغ
-"	12	17363
+149	bulakhpc	Expert	E_Arabic	141	the tobacco	141 - 12	"تِبْغ"	12	17363
 149	bulakhpc	Expert	E_Arabic	142	the tongs	142 - 20	مِلْقَط	20	17526
-149	bulakhpc	Expert	E_Arabic	143	the towel	143 - 7	"مِنْشَفَة
-"	7	17633
+149	bulakhpc	Expert	E_Arabic	143	the towel	143 - 7	"مِنْشَفَة"	7	17633
 149	bulakhpc	Expert	E_Arabic	144	the trousers	144 - 5	سِرْوَال	5	17755
-149	bulakhpc	Expert	E_Arabic	145	the turnip	145 - 18	"لِفْت
-"	18	17891
+149	bulakhpc	Expert	E_Arabic	145	the turnip	145 - 18	"لِفْت"	18	17891
 149	bulakhpc	Expert	E_Arabic	146	the voice	146 - 7	صَوْت	7	17994
-149	bulakhpc	Expert	E_Arabic	147	the wall	147 - 6	"جِدَار
-"	6	18072
+149	bulakhpc	Expert	E_Arabic	147	the wall	147 - 6	"جِدَار"	6	18072
 149	bulakhpc	Expert	E_Arabic	148	the watermelon	148 - 1	بَطِّيخ	1	18197
 149	bulakhpc	Expert	E_Arabic	149	the wedding	149 - 9	عُرْس	9	18394
 149	bulakhpc	Expert	E_Arabic	150	the week	150 - 4	أُسْبُوع	4	18598
-149	bulakhpc	Expert	E_Arabic	151	the wheel	151 - 2	"عَجَلَة
-"	2	18676
+149	bulakhpc	Expert	E_Arabic	151	the wheel	151 - 2	"عَجَلَة"	2	18676
 149	bulakhpc	Expert	E_Arabic	152	the whip	152 - 7	سَوْط	7	18772
 149	bulakhpc	Expert	E_Arabic	153	the widow	153 - 1	أَرْمَلَة	1	18841
-149	bulakhpc	Expert	E_Arabic	154	the window	154 - 8	"شُبَّاك
-"	8	18988
+149	bulakhpc	Expert	E_Arabic	154	the window	154 - 8	"شُبَّاك"	8	18988
 149	bulakhpc	Expert	E_Arabic	155	the wine	155 - 5	خَمْر	5	19197
 149	bulakhpc	Expert	E_Arabic	156	the wing	156 - 11	كَنَف	11	19268
-149	bulakhpc	Expert	E_Arabic	157	the wolf	157 - 3	"ذِئْب
-"	3	19453
+149	bulakhpc	Expert	E_Arabic	157	the wolf	157 - 3	"ذِئْب"	3	19453
 149	bulakhpc	Expert	E_Arabic	158	the work	158 - 1	عَمَل	1	19501
 149	bulakhpc	Expert	E_Arabic	159	the worm	159 - 3	دُودَة	3	19645
 149	bulakhpc	Expert	E_Arabic	160	the year	160 - 4	سَنَة	4	19777
