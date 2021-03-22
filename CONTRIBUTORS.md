@@ -5,7 +5,7 @@ Name | GitHub user | Description | Role
 Ilia Chechuro | @ilchec | maintainer | Author
 Michael Daniel | | original data | Author
 Samira Verhees | @sverhees | original data | Author
-Nina Dobrushina | | conception | Author
+Nina Dobrushina | | conception | Other
 Arseniy Averin | | original data | DataCollector
 Faina Daniel | | original data | DataCollector
 Lilia Terekhina | | original data | DataCollector
